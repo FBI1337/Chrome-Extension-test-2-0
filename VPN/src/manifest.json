@@ -19,5 +19,11 @@
         "128": "logo128.png"
     },
 
-    "permissions": ["storage", "activeTab"]
+    "permissions": [
+        "proxy",
+        "activeTab",
+        "storage",
+        "webRequest",
+        "webRequestBlocking"
+    ]
 }
