@@ -11,7 +11,9 @@ function App() {
   
     return (
       <div className={`switch ${isOn ? 'on' : 'off'}`} onClick={handleToggle}>
-        <div className="toggle"></div>
+        <div className="toggle">
+          <span className={`text ${isOn ? 'text-on' : 'text-off'}`} >{isOn ? 'on' : 'off'}</span>
+        </div>
       </div>
     );
   }
