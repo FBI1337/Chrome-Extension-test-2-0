@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import './App.css'
+import Header from './components/Header';
 
 function App() {
 
@@ -10,11 +11,16 @@ function App() {
     };
   
     return (
-      <div className={`switch ${isOn ? 'on' : 'off'}`} onClick={handleToggle}>
-        <div className="toggle">
-          <span className={`text ${isOn ? 'text-on' : 'text-off'}`} >{isOn ? 'on' : 'off'}</span>
+      <>
+      <Header  name="VPN Service"/>
+      <div className='hard'>
+        <div className={`switch ${isOn ? 'on' : 'off'}`} onClick={handleToggle}>
+          <div className="toggle">
+            <span className={`text ${isOn ? 'text-on' : 'text-off'}`} >{isOn ? 'on' : 'off'}</span>
+          </div>
         </div>
       </div>
+      </>
     );
   }
 
