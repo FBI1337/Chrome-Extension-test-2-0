@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import './App.css'
+import styles from './App.module.css'
 import Header from './components/Header';
 
 function App() {
@@ -12,14 +12,16 @@ function App() {
   
     return (
       <>
-      <Header  name="VPN Service"/>
-      <div className='hard'>
-        <div className={`switch ${isOn ? 'on' : 'off'}`} onClick={handleToggle}>
-          <div className="toggle">
-            <span className={`text ${isOn ? 'text-on' : 'text-off'}`} >{isOn ? 'on' : 'off'}</span>
+      <div className={styles.vrapper}>
+        <Header  name="VPN Service"/>
+      </div>
+        <div className={styles.hard}>
+          <div className={`styles.switch ${isOn ? 'on' : 'off'}`} onClick={handleToggle}>
+            <div className={styles.toggle}>
+              <span className={`styles.text ${isOn ? 'text-on' : 'text-off'}`} >{isOn ? 'on' : 'off'}</span>
+            </div>
           </div>
         </div>
-      </div>
       </>
     );
   }
