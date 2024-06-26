@@ -9,16 +9,19 @@ function App() {
     const handleToggle = () => {
       setIsOn(!isOn);
     };
-  
+
+    const carenType = isOn ? 'styles.on' : 'styles.off'
+    const carenText = isOn ? 'text-on' : 'text-off'
+
     return (
       <>
       <div className={styles.vrapper}>
         <Header  name="VPN Service"/>
       </div>
         <div className={styles.hard}>
-          <div className={`styles.switch ${isOn ? 'on' : 'off'}`} onClick={handleToggle}>
+          <div className={styles.switch, carenType} onClick={handleToggle}>
             <div className={styles.toggle}>
-              <span className={`styles.text ${isOn ? 'text-on' : 'text-off'}`} >{isOn ? 'on' : 'off'}</span>
+              <span className={`styles.text ${carenText}`} >{carenType}</span>
             </div>
           </div>
         </div>
