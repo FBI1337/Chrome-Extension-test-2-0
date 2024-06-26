@@ -1,0 +1,67 @@
+
+.switch {
+    width: 70px;
+    height: 30px;
+    border-radius: 16px;
+    position: relative;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+  }
+  
+  .switch.on {
+    background-color: green;
+    justify-content: flex-end;
+    box-shadow:  0 0 10px green;
+  }
+  
+  .switch.off {
+    background-color: red ;
+    justify-content: flex-start;
+    box-shadow:  0 0 10px red;
+  }
+  
+.switch.on:hover{
+    box-shadow: 0 0 20px green;
+  }
+  
+  .switch.off:hover{
+    box-shadow: 0 0 20px red;
+  }
+  
+  
+  .toggle {
+    width: 26px;
+    height: 26px;
+    background-color: white;
+    border-radius: 16px;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: left 0.5s;
+  }
+  
+  .switch.on .toggle {
+    left: calc(100% - 26px - 2px);
+  }
+  
+  .switch.off .toggle{
+    left: 2px;
+  }
+  
+  .text{
+    font-size: 12px;
+    font-weight: 700;
+  }
+  
+  .textOn{
+    color: green;
+  }
+  
+  .textOff{
+    color: rgb(206, 1, 1);
+  }
+  

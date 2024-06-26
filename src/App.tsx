@@ -1,29 +1,22 @@
 import { useState } from 'react'
 import styles from './App.module.css'
 import Header from './components/Header';
+import { HEADER_NAME } from './constants';
+import Toggle from './components/Toggle';
 
-function App() {
-
-    const [isOn, setIsOn] = useState(false);
+const App: React.FC = () => {
+    const [isActive, setIsactive] = useState(false);
   
-    const handleToggle = () => {
-      setIsOn(!isOn);
-    };
-
-    const carenType = isOn ? 'styles.on' : 'styles.off'
-    const carenText = isOn ? 'text-on' : 'text-off'
-
+    const onToggleActive = () => setIsactive(prev => !prev);
+    
     return (
       <>
-      <div className={styles.vrapper}>
-        <Header  name="VPN Service"/>
-      </div>
-        <div className={styles.hard}>
-          <div className={styles.switch, carenType} onClick={handleToggle}>
-            <div className={styles.toggle}>
-              <span className={`styles.text ${carenText}`} >{carenType}</span>
-            </div>
-          </div>
+        <Header name={HEADER_NAME}/>
+        <div className={styles.toggleWrapper}>
+           <Toggle 
+            isActive={isActive} 
+            onToggleActive={onToggleActive} 
+          />
         </div>
       </>
     );
