@@ -23,7 +23,6 @@
         "proxy",
         "activeTab",
         "storage",
-        "webRequest",
-        "webRequestBlocking"
+        "webRequest"
     ]
 }
