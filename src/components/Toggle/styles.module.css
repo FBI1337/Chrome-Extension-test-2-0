@@ -13,23 +13,23 @@
   
   .switch.on {
     background-color: green;
-    justify-content: flex-end;
+    /* justify-content: flex-end; */
     box-shadow:  0 0 10px green;
   }
   
   .switch.off {
     background-color: red ;
-    justify-content: flex-start;
+    /* justify-content: flex-start; */
     box-shadow:  0 0 10px red;
   }
   
-.switch.on:hover{
-    box-shadow: 0 0 20px green;
-  }
-  
+  .switch.on:hover{
+      box-shadow: 0 0 20px green;
+    }
+    
   .switch.off:hover{
-    box-shadow: 0 0 20px red;
-  }
+      box-shadow: 0 0 20px red;
+   }
   
   
   .toggle {
