@@ -3,8 +3,10 @@
     text-align: center;
     padding: 10px;
     cursor: pointer;
-    box-shadow: 0 0 10px red;
     width: 500px;
+    height: 100px;
+    overflow: hidden;
+    user-select: none;
 }
 
 .optionWrapper {
@@ -29,14 +31,17 @@
 }
 
 
-/* .selectWrapper.on {
-    background-color: green;
+.selectWrapper.on {
     justify-content: flex-end;
     box-shadow:  0 0 10px green;
   }
   
-  .selectWrapper.off {
-    background-color: red ;
+.selectWrapper.off {
     justify-content: flex-start;
     box-shadow:  0 0 10px red;
-  } */
+  }
+
+  .selectWrapper.click{
+    overflow: auto;
+  }
+
