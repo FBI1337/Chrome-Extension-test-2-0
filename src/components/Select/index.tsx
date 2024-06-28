@@ -77,24 +77,32 @@ type IProps = {
 
 const Select:React.FC<IProps> =({isActive, clickAtive, onSelectActive}) => {
   return (
-    <div
-        className={cn(styles.selectWrapper, {
-            [styles.on]: isActive,
-            [styles.off]: !isActive,
-            [styles.click]: clickAtive,
-        })}
+    <div>
+        <div className={cn(styles.her, {
+            [styles.click]:clickAtive
+        })}       
         onClick={onSelectActive}
-    >
-        {countersList.map(item => (
-            <div className={styles.optionWrapper}>
-                <div className={styles.iconWapper}>
-                <img src={item.img}/> 
-                </div>
-                <div className={styles.textWrapper}>
-                    {item.countre}
-                </div>
+        >Хер
+        </div>
+            <div
+                className={cn(styles.selectWrapper, {
+                    [styles.on]: isActive,
+                    [styles.off]: !isActive,
+                    [styles.click]:clickAtive
+                    })}
+                    onClick={onSelectActive}
+                    >
+                    {countersList.map(item => (
+                        <div className={styles.optionWrapper}>
+                            <div className={styles.iconWapper}>
+                            <img src={item.img}/> 
+                            </div>
+                            <div className={styles.textWrapper}>
+                                {item.countre}
+                            </div>
+                        </div>
+                    ))}
             </div>
-        ))}
     </div>
   )
 }

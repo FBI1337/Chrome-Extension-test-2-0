@@ -15,22 +15,24 @@ const App: React.FC = () => {
     
     return (
       <>
-        <Header name={HEADER_NAME}/>
-        <div className={styles.selectWrapper}>
-          <div className={styles.diveWrapper}>{CHOOSE}</div>
-          <Select
-            isActive={isActive}
-            clickAtive={clickAtive}
-            onSelectActive={onSelectActive}
-          />
+        <div className={styles.wrapper}>
+          <Header name={HEADER_NAME}/>
+          <div className={styles.selectWrapper}>
+            <div className={styles.diveWrapper}>{CHOOSE}</div>
+            <Select
+              isActive={isActive}
+              clickAtive={clickAtive}
+              onSelectActive={onSelectActive}
+            />
+          </div>
+          <div className={styles.toggleWrapper}>
+            <Toggle 
+              isActive={isActive} 
+              onToggleActive={onToggleActive} 
+            />
+          </div>
+          <Footer name={FOOTER_NAME}/>
         </div>
-        <div className={styles.toggleWrapper}>
-           <Toggle 
-            isActive={isActive} 
-            onToggleActive={onToggleActive} 
-          />
-        </div>
-        <Footer name={FOOTER_NAME}/>
       </>
     );
   }

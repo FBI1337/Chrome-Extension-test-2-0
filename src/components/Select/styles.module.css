@@ -3,17 +3,18 @@
     text-align: center;
     padding: 10px;
     cursor: pointer;
-    width: 500px;
-    height: 100px;
-    overflow: hidden;
     user-select: none;
+    overflow: hidden;
+    position: absolute;
+    top: 250px;
+    display: none;
+    z-index: 2;
 }
 
 .optionWrapper {
     display: flex;
     justify-content: space-around;
     align-items: center;
-
 }
 
 .iconWapper {
@@ -41,7 +42,21 @@
     box-shadow:  0 0 10px red;
   }
 
-  .selectWrapper.click{
+  .selectWrapper.click {
+    color: blue;
+    overflow: scroll;
+    width: 500px;
+    height: 100px;
+    background-color: black;
     overflow: auto;
+    display: block;
   }
 
+
+
+  .her {
+    color: red;
+    position: static;
+    text-align: center;
+    padding: 5px;
+  }

@@ -1,3 +1,9 @@
+/* .wrapper {
+  width: 700px;
+} */
+
+
+
 .toggleWrapper {
   display: flex;
   justify-content: center;
@@ -17,3 +23,4 @@
   color: gray;
   font-size: 16px;
 }
+
