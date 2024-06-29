@@ -115,7 +115,13 @@ const Select: React.FC = () => {
 
     const [isShow, setIsShow] = useState(false)
 
-    const [currentCountry, setCurrentCountry] = useState(countersList[0])
+    const savedCountryId = localStorage.getItem('selectedCountryId')
+
+    const selectedCountry = savedCountryId 
+    ? countersList.find(el => el.id === Number(savedCountryId)) || countersList[0] : countersList[0];
+
+
+    const [currentCountry, setCurrentCountry] = useState(selectedCountry)
 
     const filteredCountriesList = countersList.filter(el => el.id !== currentCountry.id)
 
@@ -125,6 +131,7 @@ const Select: React.FC = () => {
         if (!newCountry) return
 
         setCurrentCountry(newCountry)
+        localStorage.setItem('selectedCountryId', newCountry.id.toString());
     }
 
     const onToggleIsShow = () => setIsShow(prev => !prev) 
