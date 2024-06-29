@@ -8,9 +8,7 @@ type IProps = {
 const Header:React.FC<IProps> = ({ name }) => {
     return (
         <div className={styles.wrapper}>
-            <div className={styles.content}>
-                {name}
-            </div>
+            {name}
         </div>
     )
 }

@@ -14,22 +14,24 @@ const Toggle: React.FC<IProps> = ({ isActive, onToggleActive }) => {
     ), [isActive])
 
     return (
-        <div 
-            className={cn(styles.switch, {
-                [styles.on]: isActive,
-                [styles.off]: !isActive,
-            })} 
-            onClick={onToggleActive}
-        >
-            <div className={styles.toggle}>
-                <span 
-                    className={cn(styles.text, {
-                        [styles.textOn]: isActive,
-                        [styles.textOff]: !isActive,
-                    })} 
-                >
-                {currentType}
-                </span>
+        <div className={styles.toggleWrapper}>
+            <div 
+                className={cn(styles.switch, {
+                    [styles.on]: isActive,
+                    [styles.off]: !isActive,
+                })} 
+                onClick={onToggleActive}
+            >
+                <div className={styles.toggle}>
+                    <span 
+                        className={cn(styles.text, {
+                            [styles.textOn]: isActive,
+                            [styles.textOff]: !isActive,
+                        })} 
+                    >
+                    {currentType}
+                    </span>
+                </div>
             </div>
         </div>
     )

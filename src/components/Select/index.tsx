@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import cn from 'classnames';
 import styles from './styles.module.css';
 import russia from '../Countres/russia.png';
@@ -10,101 +10,159 @@ import canada from '../Countres/canada.png';
 import argentina from '../Countres/argentina.png';
 import france from '../Countres/france.png';
 import en from '../Countres/en.png';
-
-
+import SelectItem from './Item';
 
 const countersList = [
     {
         img: russia,
-        countre: 'Russia',
+        country: 'Russia',
         id: 0
     },
 
     {
         img: usa,
-        countre: 'USA',
+        country: 'USA',
         id: 1
     },
 
     {
         img: germany,
-        countre: 'Germany',
+        country: 'Germany',
         id: 2
     },
 
     {
         img: brazil,
-        countre: 'Brazil',
+        country: 'Brazil',
         id: 3
     },
 
     {
         img: italy,
-        countre: 'Italy',
+        country: 'Italy',
         id: 4
     },
 
     {
         img: canada,
-        countre: 'Canada',
+        country: 'Canada',
         id: 5
     },
 
     {
         img: argentina,
-        countre: 'Argentina',
+        country: 'Argentina',
         id: 6
     },
 
     {
         img: france,
-        countre: 'France',
+        country: 'France',
         id: 7
     },
 
     {
         img: en,
-        countre: 'United Kingdom',
+        country: 'United Kingdom',
         id: 8
     }
 ]
 
-type IProps = {
-    clickAtive: boolean
-    isActive: boolean
-    onSelectActive: () => void
-}
+// type IProps = {
+//     clickAtive: boolean
+//     isActive: boolean
+//     onSelectActive: () => void
+// }
 
-const Select:React.FC<IProps> =({isActive, clickAtive, onSelectActive}) => {
-  return (
-    <div>
-        <div className={cn(styles.her, {
-            [styles.click]:clickAtive
-        })}       
-        onClick={onSelectActive}
-        >Хер
-        </div>
-            <div
-                className={cn(styles.selectWrapper, {
-                    [styles.on]: isActive,
-                    [styles.off]: !isActive,
-                    [styles.click]:clickAtive
-                    })}
-                    onClick={onSelectActive}
-                    >
-                    {countersList.map(item => (
-                        <div className={styles.optionWrapper}>
-                            <div className={styles.iconWapper}>
-                            <img src={item.img}/> 
-                            </div>
-                            <div className={styles.textWrapper}>
-                                {item.countre}
-                            </div>
-                        </div>
-                    ))}
+// const Select:React.FC<IProps> =({isActive, clickAtive, onSelectActive}) => {
+//   return (
+//     <div>
+//         <div 
+//             className={cn(styles.her, {
+//                 [styles.click]:clickAtive
+//             })}       
+//             onClick={onSelectActive}
+//         >
+//             Хер
+//         </div>
+//         <div
+//             className={cn(styles.selectWrapper, {
+//                 [styles.on]: isActive,
+//                 [styles.off]: !isActive,
+//                 [styles.click]:clickAtive
+//             })}
+//             onClick={onSelectActive}
+//         >
+//             {countersList.map(item => (
+//                 <div className={styles.optionWrapper}>
+//                     <div className={styles.iconWapper}>
+//                         <img src={item.img}/> 
+//                     </div>
+//                     <div className={styles.textWrapper}>
+//                         {item.country}
+//                     </div>
+//                 </div>
+//             ))}
+//         </div>
+//     </div>
+//   )
+// }
+
+// export default Select
+
+
+const Select: React.FC = () => {
+
+    const [isShow, setIsShow] = useState(false)
+
+    const [currentCountry, setCurrentCountry] = useState(countersList[0])
+
+    const filteredCountriesList = countersList.filter(el => el.id !== currentCountry.id)
+
+    const onSelectCurrentCountry = (id: number) => {
+        const newCountry = filteredCountriesList.find(el => el.id === id)
+
+        if (!newCountry) return
+
+        setCurrentCountry(newCountry)
+    }
+
+    const onToggleIsShow = () => setIsShow(prev => !prev) 
+
+    const onSelect = (id: number) => {
+        onSelectCurrentCountry(id)
+        onToggleIsShow()
+    }
+
+    return (
+        <div className={styles.wrapper}>
+            <div className={styles.diveWrapper}>
+                Choose location
             </div>
-    </div>
-  )
+            <>
+                <SelectItem 
+                    isCurrent
+                    id={currentCountry.id}
+                    text={currentCountry.country}
+                    img={currentCountry.img}
+                    onClick={onToggleIsShow}
+                />
+                <div className={cn(styles.listWrapper, {
+                    [styles.showListWrapper]: isShow
+                })}>
+                    {filteredCountriesList.map(el => (
+                       <SelectItem 
+                            key={el.id}
+                            id={el.id}
+                            text={el.country}
+                            img={el.img}
+                            onClick={onSelect}
+                       />
+                    ))}
+                </div>
+            </>
+        </div>
+    )
 }
 
 export default Select
