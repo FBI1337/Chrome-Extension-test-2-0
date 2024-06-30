@@ -1,72 +1,9 @@
 import React, { useState } from 'react'
 import cn from 'classnames';
 import styles from './styles.module.css';
-import russia from '../Countres/russia.png';
-import usa from '../Countres/usa.png';
-import germany from '../Countres/germany.png';
-import brazil from '../Countres/brazil.png';    
-import italy from '../Countres/italy.png';
-import canada from '../Countres/canada.png';
-import argentina from '../Countres/argentina.png';
-import france from '../Countres/france.png';
-import en from '../Countres/en.png';
 import SelectItem from './Item';
+import { useAppSelector } from '../../hooks';
 
-const countersList = [
-    {
-        img: russia,
-        country: 'Russia',
-        id: 0
-    },
-
-    {
-        img: usa,
-        country: 'USA',
-        id: 1
-    },
-
-    {
-        img: germany,
-        country: 'Germany',
-        id: 2
-    },
-
-    {
-        img: brazil,
-        country: 'Brazil',
-        id: 3
-    },
-
-    {
-        img: italy,
-        country: 'Italy',
-        id: 4
-    },
-
-    {
-        img: canada,
-        country: 'Canada',
-        id: 5
-    },
-
-    {
-        img: argentina,
-        country: 'Argentina',
-        id: 6
-    },
-
-    {
-        img: france,
-        country: 'France',
-        id: 7
-    },
-
-    {
-        img: en,
-        country: 'United Kingdom',
-        id: 8
-    }
-]
 
 // type IProps = {
 //     clickAtive: boolean
@@ -113,17 +50,20 @@ const countersList = [
 
 const Select: React.FC = () => {
 
+
+    const countriesList = useAppSelector(state => state.countries.countriesList)
+    
     const [isShow, setIsShow] = useState(false)
 
     const savedCountryId = localStorage.getItem('selectedCountryId')
 
     const selectedCountry = savedCountryId 
-    ? countersList.find(el => el.id === Number(savedCountryId)) || countersList[0] : countersList[0];
+    ? countriesList.find(el => el.id === Number(savedCountryId)) || countriesList[0] : countriesList[0];
 
 
     const [currentCountry, setCurrentCountry] = useState(selectedCountry)
 
-    const filteredCountriesList = countersList.filter(el => el.id !== currentCountry.id)
+    const filteredCountriesList = countriesList.filter(el => el.id !== currentCountry.id)
 
     const onSelectCurrentCountry = (id: number) => {
         const newCountry = filteredCountriesList.find(el => el.id === id)
