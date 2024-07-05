@@ -1,9 +1,50 @@
 .wrapper {
     background-color: grey;
-    padding: 32px 16px;
-    font-size: 32px;
+    padding: 25px 1px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
 }
 
 .content {
     text-align: center;
+}
+
+.home {
+    display: flex;
+    text-align: center;
+    font-size: 20px;
+    flex-direction: column;
+    align-items: center;
+    transition: background-color 0.3s ease;
+}
+
+.home:hover{
+    background-color: red;
+}
+
+.favorites{
+    display: flex;
+    text-align: center;
+    font-size: 15px;
+    flex-direction: column;
+    align-items: center;
+    transition: background-color 0.3s ease;
+}
+
+.favorites:hover{
+    background-color: red;
+}
+
+.account {
+    display: flex;
+    text-align: center;
+    font-size: 15px;
+    flex-direction: column;
+    align-items: center;
+    transition: background-color 0.3s ease;
+}
+
+.account:hover{
+    background-color: red;
 }
