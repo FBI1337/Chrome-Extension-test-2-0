@@ -1,9 +1,10 @@
 .wrapper {
-    background-color: grey;
+    background-color: gray;
     padding: 25px 1px;
     display: flex;
     align-items: center;
     justify-content: space-around;
+    user-select: none;  
 }
 
 .content {
@@ -20,7 +21,7 @@
 }
 
 .home:hover{
-    background-color: red;
+    background-color: rgb(70, 70, 70);
 }
 
 .favorites{
@@ -33,7 +34,7 @@
 }
 
 .favorites:hover{
-    background-color: red;
+    background-color: rgb(70, 70, 70);
 }
 
 .account {
@@ -46,5 +47,13 @@
 }
 
 .account:hover{
-    background-color: red;
+    background-color: rgb(70, 70, 70);
+}
+
+.listWrapper {
+    display: none;
+}
+
+.showListWrapper {
+    display: flex;
 }

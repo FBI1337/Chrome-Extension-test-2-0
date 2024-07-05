@@ -4,7 +4,7 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import Toggle from './components/Toggle';
 import Select from './components/Select';
-import { FOOTER_NAME, HEADER_NAME } from './constants';
+import { HEADER_NAME } from './constants';
 
 const App: React.FC = () => {
     const [isActive, setIsactive] = useState(false);
@@ -16,7 +16,7 @@ const App: React.FC = () => {
         <Header name={HEADER_NAME}/>
         <Select />   
         <Toggle isActive={isActive} onToggleActive={onToggleActive} />
-        <Footer name={FOOTER_NAME}/>
+        <Footer />
       </div>    
     );
   }

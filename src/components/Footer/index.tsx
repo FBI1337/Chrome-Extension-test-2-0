@@ -1,28 +1,34 @@
 import { MdAccountBox } from "react-icons/md"; 
 import { BsStarFill } from "react-icons/bs"; 
-import { HiHome } from "react-icons/hi"; 
-import React from 'react';
+import { HiHome } from "react-icons/hi";
+import cn from 'classnames';
+import Home from '../Home'
+import React, { useState } from 'react';
 import styles from './syles.module.css'
 
-type IProps = {
-    name: string
-}
 
-const Footer: React.FC<IProps> = ()=> {
+const Footer: React.FC = ()=> {
+
+  const [isShow, setIsShow] = useState(false);
+
+  const onToggleIsShow = () => setIsShow(prev => !prev);
+
   return (
-    // <div className={styles.wrapper}>
-    //     <div className={styles.content}>
-    //         {name}
-    //     </div>
-    // </div>
 
     <div className={styles.wrapper}>
-      <div className={styles.favorites}>
+      <div className={styles.favorites} >
         <BsStarFill />
         <span>Favorites</span>
       </div>
       <div className={styles.home}>
-        <HiHome />
+        <HiHome 
+        onClick={onToggleIsShow}
+        />
+        <div className={cn(styles.listWrapper, {
+          [styles.showListWrapper]: isShow
+        })}>
+          <Home />
+        </div>
       </div>
       <div className={styles.account}>
         <MdAccountBox />
