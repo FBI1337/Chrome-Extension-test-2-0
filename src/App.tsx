@@ -1,24 +1,18 @@
-import { useState } from 'react'
-import styles from './App.module.css'
-import Header from './components/Header';
+import React from 'react'
+import { Routes, BrowserRouter} from 'react-router-dom'
+import Header from './components/Header/';
 import Footer from './components/Footer';
-import Toggle from './components/Toggle';
-import Select from './components/Select';
 import { HEADER_NAME } from './constants';
 
 const App: React.FC = () => {
-    const [isActive, setIsactive] = useState(false);
-  
-    const onToggleActive = () => setIsactive(prev => !prev);
     
     return (
-      <div className={styles.wrapper}>
+      <BrowserRouter>
         <Header name={HEADER_NAME}/>
-        <Select />   
-        <Toggle isActive={isActive} onToggleActive={onToggleActive} />
+        <Routes />
         <Footer />
-      </div>    
-    );
+      </BrowserRouter>
+    );  
   }
 
 export default App

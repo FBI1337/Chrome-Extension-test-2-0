@@ -1,10 +1,13 @@
-import { MdAccountBox } from "react-icons/md"; 
-import { BsStarFill } from "react-icons/bs"; 
+// import { MdAccountBox } from "react-icons/md"; 
+// import { BsStarFill } from "react-icons/bs"; 
 import { HiHome } from "react-icons/hi";
 import cn from 'classnames';
-import Home from '../Home'
-import React, { useState } from 'react';
+// import Home from '../Home'
+import { useState } from 'react';
+import { Link } from "react-router-dom";
 import styles from './syles.module.css'
+// import Favorites from "../Favorites";
+// import Account from "../Account";
 
 
 const Footer: React.FC = ()=> {
@@ -15,26 +18,42 @@ const Footer: React.FC = ()=> {
 
   return (
 
-    <div className={styles.wrapper}>
-      <div className={styles.favorites} >
-        <BsStarFill />
-        <span>Favorites</span>
-      </div>
-      <div className={styles.home}>
-        <HiHome 
-        onClick={onToggleIsShow}
-        />
+    <ul>
+        <Link to="home">
+        <div className={styles.home} onClick={onToggleIsShow}>
+        <HiHome/>
         <div className={cn(styles.listWrapper, {
           [styles.showListWrapper]: isShow
         })}>
-          <Home />
         </div>
-      </div>
-      <div className={styles.account}>
-        <MdAccountBox />
-        <span>Account</span>
-      </div>
-    </div>
+        </div>
+        </Link>
+    </ul>
+
+    // <div className={styles.wrapper}>
+    //   <div className={styles.favorites} onClick={onToggleIsShow}>
+    //     <BsStarFill />
+    //     <span>Favorites</span>
+    //     <div className={cn(styles.listWrapper, {
+    //       [styles.showListWrapper]: isShow
+    //     })}>
+    //       <Favorites />
+    //     </div>
+    //   </div>
+      
+        
+
+      // </div>
+    //   <div className={styles.account} onClick={onToggleIsShow}>
+    //     <MdAccountBox />
+    //     <span>Account</span>
+    //     <div className={cn(styles.listWrapper, {
+    //       [styles.showListWrapper]: isShow
+    //     })}>
+    //       <Account />
+    //     </div>
+    //   </div>
+    // </div>
   )
 }
 

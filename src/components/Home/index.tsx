@@ -1,10 +1,21 @@
-import React from 'react'
-// import styles from './styles.module.css'
+import { useState } from 'react'
+import Toggle from '../Toggle';
+import Select from '../Select';
+import styles from './styles.module.css'
 
 const Home : React.FC  = () => {
+
+  const [isActive, setIsactive] = useState(false);
+  
+  const onToggleActive = () => setIsactive(prev => !prev);
+
+
   return (
-    <div></div>
-  )
+    <div className={styles.wrapper}>
+      <Select />
+      <Toggle isActive={isActive} onToggleActive={onToggleActive} />
+    </div>
+   )
 }
 
 export default Home
