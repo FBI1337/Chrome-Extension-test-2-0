@@ -1,9 +1,10 @@
 // import { MdAccountBox } from "react-icons/md"; 
-// import { BsStarFill } from "react-icons/bs"; 
+import { BsStarFill } from "react-icons/bs"; 
 import { HiHome } from "react-icons/hi";
-import cn from 'classnames';
+// import cn from 'classnames';
 // import Home from '../Home'
-import { useState } from 'react';
+// import { useState } from 'react';
+import React from "react";
 import { Link } from "react-router-dom";
 import styles from './syles.module.css'
 // import Favorites from "../Favorites";
@@ -12,23 +13,19 @@ import styles from './syles.module.css'
 
 const Footer: React.FC = ()=> {
 
-  const [isShow, setIsShow] = useState(false);
+  // const [isShow, setIsShow] = useState(false);
 
-  const onToggleIsShow = () => setIsShow(prev => !prev);
+  // const onToggleIsShow = () => setIsShow(prev => !prev);
 
   return (
-
-    <ul>
-        <Link to="home">
-        <div className={styles.home} onClick={onToggleIsShow}>
-        <HiHome/>
-        <div className={cn(styles.listWrapper, {
-          [styles.showListWrapper]: isShow
-        })}>
-        </div>
-        </div>
+      <div className={styles.wrapper}>
+        <Link to="">
+        <HiHome />
         </Link>
-    </ul>
+        <Link to="account">
+        <BsStarFill />
+        </Link>
+      </div>
 
     // <div className={styles.wrapper}>
     //   <div className={styles.favorites} onClick={onToggleIsShow}>

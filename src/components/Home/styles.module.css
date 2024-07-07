@@ -11,3 +11,7 @@
     color: gray;
     font-size: 16px;
   }
+
+  .wrapper{
+    display: flex;
+  }

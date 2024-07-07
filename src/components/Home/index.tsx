@@ -1,9 +1,11 @@
 import { useState } from 'react'
 import Toggle from '../Toggle';
 import Select from '../Select';
-import styles from './styles.module.css'
+// import cn from 'classnames';
+// import styles from './styles.module.css'
 
-const Home : React.FC  = () => {
+
+const Home : React.FC = () => {
 
   const [isActive, setIsactive] = useState(false);
   
@@ -11,7 +13,7 @@ const Home : React.FC  = () => {
 
 
   return (
-    <div className={styles.wrapper}>
+    <div>
       <Select />
       <Toggle isActive={isActive} onToggleActive={onToggleActive} />
     </div>
