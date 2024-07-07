@@ -1,5 +1,6 @@
+import { MdOutlineAccountCircle } from "react-icons/md"; 
 import React from 'react'
-// import styles from './styles.module.css'
+import styles from './styles.module.css'
 
 
 
@@ -7,8 +8,19 @@ import React from 'react'
 const  Account : React.FC = () => {
 
   return (
-    <div>
-      Хер
+    <div className={styles.wrapper}>
+      <div>
+        My account
+        <div className={styles.login}>
+          <div className={styles.logo}>
+            <MdOutlineAccountCircle />
+            Sign in
+          </div>
+        </div>
+        <div>
+          Что-то еще
+        </div>
+      </div>
     </div>
   )
 }

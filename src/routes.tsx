@@ -3,29 +3,19 @@ import Home from './components/Home/index';
 import Account from './components/Account/index';
 import Favorites from './components/Favorites/index';
 
-
-// export default routesWrapper = () => (
-//     <Routes>
-//         <Route path="/" element={<Home />} />
-//         <Route path="account" element={<Account />} />
-//         <Route  path="/" element={<Favorites />} />
-//     </Routes>
-// );
-
-
 import React from 'react'
 
-const routesWrapper = () => {
+const RoutesWrapper: React.FC = () => {
 
   return (
     <Routes>
         <Route path="/" element={<Home />} />
         <Route path="account" element={<Account />} />
-        <Route  path="/" element={<Favorites />} />
+        <Route  path="favorites" element={<Favorites />} />
     </Routes>
   )
 }
 
-export default routesWrapper
+export default RoutesWrapper
 
 

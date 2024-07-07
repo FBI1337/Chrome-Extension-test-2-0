@@ -1,20 +1,14 @@
-import { useState } from 'react'
-import Toggle from '../Toggle';
-import Select from '../Select';
+import React from 'react'
 import styles from './styles.module.css'
 
 const Favorites: React.FC = () => {
 
-    const [isActive, setIsactive] = useState(false);
-  
-    const onToggleActive = () => setIsactive(prev => !prev);
 
 
 
   return (
     <div className={styles.wrapper}>
-      <Select />
-      <Toggle isActive={isActive} onToggleActive={onToggleActive} />
+      <span>Тут что-то будет</span>
     </div>
   )
 }
