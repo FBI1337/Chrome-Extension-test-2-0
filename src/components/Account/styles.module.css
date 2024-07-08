@@ -1,28 +1,69 @@
   .wrapper {
-    text-align:  center;
-    color: red;
-    padding: 25px 1px;
+    padding: 0px 20px;
     display: flex;
     flex-direction: column;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     align-content: center;
+    height: 350px;
+    max-width: 300px;
+    overflow-y: auto;
   }
 
 
-  .login {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    max-width: 300px;
-    width: 100%;
+  .blockWrapper {
     color: gray;
     background-color: darkgray; 
     box-sizing: border-box;
-    padding: 8px;
+    padding: 8px 50px;
+    margin: 8px 0px;
     border-radius: 8px;
+    user-select: none;
+    cursor: pointer;
+  }
+
+
+  .signin {
+    display: flex;
+    align-items: center;
+    font-size: 15px;
+    color: crimson;
+  }
+
+  .preference {
+    display: flex;
+    align-items: center;
+    font-size: 15px;
+    color: crimson;
+  }
+
+  .incognito {
+    display: flex;
+    align-items: center;
+    font-size: 15px;
+    color: crimson;
+  }
+
+  .support {
+    display: flex;
+    align-items: center;
+    font-size: 15px;
+    color: crimson;
+  }
+
+  .report {
+    display: flex;
+    align-items: center;
+    font-size: 15px;
+    color: crimson;
   }
 
   .logo {
-    text-align: center;
+    display: flex;
+    align-items: center;
+    margin: 0px 8px;
+  }
+
+  .text {
     font-size: 20px;
+    user-select: none;
   }

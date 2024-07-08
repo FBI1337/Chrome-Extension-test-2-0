@@ -25,9 +25,10 @@ const Footer: React.FC = ()=> {
         <NavLink to="">
           <div className={styles.home}>
             <HiHome />
+            <span className={styles.text}>Home</span>
           </div>
         </NavLink>
-        <NavLink to="account">
+        <NavLink to="account" >
           <div className={styles.account}>
             <MdAccountBox />
             <span className={styles.text}>Account</span>

@@ -4,4 +4,5 @@
     font-size: 32px;
     text-align: center;
     white-space: nowrap;
+    user-select: none;
 }

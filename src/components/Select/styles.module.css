@@ -1,11 +1,12 @@
 .wrapper {
-    height: 360px;
+    height: 260px;
     display: flex;
     flex-direction: column;
     align-items: center;
     max-width: 200px;
     margin: 0 auto;
     padding: 16px;
+    overflow-y: auto;
 }
 
 .diveWrapper {
@@ -13,6 +14,7 @@
     font-size: 20px;
     margin-bottom: 16px;
     letter-spacing: 0.8px;
+    user-select: none;
 }
 
 .listWrapper {
