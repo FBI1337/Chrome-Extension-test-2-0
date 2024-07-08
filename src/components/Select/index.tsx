@@ -4,50 +4,6 @@ import styles from './styles.module.css';
 import SelectItem from './Item';
 import { useAppSelector } from '../../hooks';
 
-
-// type IProps = {
-//     clickAtive: boolean
-//     isActive: boolean
-//     onSelectActive: () => void
-// }
-
-// const Select:React.FC<IProps> =({isActive, clickAtive, onSelectActive}) => {
-//   return (
-//     <div>
-//         <div 
-//             className={cn(styles.her, {
-//                 [styles.click]:clickAtive
-//             })}       
-//             onClick={onSelectActive}
-//         >
-//             Хер
-//         </div>
-//         <div
-//             className={cn(styles.selectWrapper, {
-//                 [styles.on]: isActive,
-//                 [styles.off]: !isActive,
-//                 [styles.click]:clickAtive
-//             })}
-//             onClick={onSelectActive}
-//         >
-//             {countersList.map(item => (
-//                 <div className={styles.optionWrapper}>
-//                     <div className={styles.iconWapper}>
-//                         <img src={item.img}/> 
-//                     </div>
-//                     <div className={styles.textWrapper}>
-//                         {item.country}
-//                     </div>
-//                 </div>
-//             ))}
-//         </div>
-//     </div>
-//   )
-// }
-
-// export default Selects
-
-
 const Select: React.FC = () => {
 
 

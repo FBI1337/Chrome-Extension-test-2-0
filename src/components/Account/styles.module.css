@@ -10,7 +10,7 @@
   }
 
 
-  .blockWrapper {
+  .wrapper {
     color: gray;
     background-color: darkgray; 
     box-sizing: border-box;
@@ -22,12 +22,7 @@
   }
 
 
-  .signin {
-    display: flex;
-    align-items: center;
-    font-size: 15px;
-    color: crimson;
-  }
+
 
   .preference {
     display: flex;
@@ -66,4 +61,12 @@
   .text {
     font-size: 20px;
     user-select: none;
+  }
+
+  .preferenceList {
+    background-color: white;
+    transform: 
+    translateX(0%)
+    translateY(0px);
+    
   }
