@@ -9,9 +9,22 @@
     cursor: pointer;
   }
 
-.signin {
+  .support {
     display: flex;
     align-items: center;
     font-size: 15px;
     color: crimson;
+  }
+
+  .report {
+    display: flex;
+    align-items: center;
+    font-size: 15px;
+    color: crimson;
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+    margin: 0px 8px;
   }
