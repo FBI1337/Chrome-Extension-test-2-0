@@ -1,15 +1,26 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styles from './styles.module.css'
 import { RiEqualizerLine } from "react-icons/ri";
+import cn from 'classnames'
+
+
 
 const Preference: React.FC = () => {
+
+
+  
+  const [isShow, setisShow] = useState(false) 
+
+  const onToggleIsShow = () => setisShow (prev => !prev)
   return (
-    <div className={styles.wrapper}>
-        <div className={styles.preference}>
+    <div  className={styles.wrapper}>
+        <div onClick={onToggleIsShow} className={cn(styles.preference, {
+          [styles.preferenceList]: isShow
+          })}>
             <div className={styles.logo}>
                 <RiEqualizerLine />
             </div>
-        <span>Preference</span>
+        <span className={styles.text}>Preference</span>
         </div>
     </div>
   )

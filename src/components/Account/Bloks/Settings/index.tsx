@@ -8,6 +8,7 @@ import IncognitoMode from './Blocks/IncognitoMode'
 const Settings: React.FC = () => {
 
 
+
   return (
   <div className={styles.text}> 
     Settings
