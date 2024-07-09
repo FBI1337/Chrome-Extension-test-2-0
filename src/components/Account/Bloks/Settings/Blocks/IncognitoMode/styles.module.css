@@ -9,13 +9,6 @@
     cursor: pointer;
   }
 
-  .preference {
-    display: flex;
-    align-items: center;
-    font-size: 15px;
-    color: crimson;
-  }
-
   .incognito {
     display: flex;
     align-items: center;
