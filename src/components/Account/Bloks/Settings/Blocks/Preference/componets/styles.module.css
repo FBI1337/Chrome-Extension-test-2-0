@@ -1,0 +1,18 @@
+.wrapper { 
+    display: flex;
+    height: max-content;
+}
+
+.header {
+    width: 100%;
+}
+
+.block { 
+    display: flex;
+    width: 100%;
+}
+
+.list { 
+    font-size: 32px;
+    color: crimson;
+}
