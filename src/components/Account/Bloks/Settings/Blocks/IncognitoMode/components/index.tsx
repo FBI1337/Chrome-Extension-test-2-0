@@ -1,21 +1,20 @@
+import React from 'react'
 import { RxCross2 } from "react-icons/rx"; 
 import { CgArrowLeft } from "react-icons/cg"; 
-import React from 'react'
 import styles from './styles.module.css'
-import { HEADER_NAME } from "../../../../../../../constants";
 
 type IProps = {
     onToggleIsShow: () => void
     onCloseExstention: () => void
+
 }
 
 
-const PreferenceList: React.FC<IProps> = ({onToggleIsShow, onCloseExstention}) => {
+
+const IncognitoBlock: React.FC<IProps> = ({onToggleIsShow, onCloseExstention}) => {
 
     const onClickFn = onToggleIsShow
     const onClickCross = onCloseExstention
-
-
 
   return (
     <div>
@@ -24,7 +23,7 @@ const PreferenceList: React.FC<IProps> = ({onToggleIsShow, onCloseExstention}) =
                 <CgArrowLeft />
             </div>
             <div className={styles.text}>
-                {HEADER_NAME}
+                Incognito Mode
             </div>
             <div onClick={onClickCross} className={styles.logo}>
                 <RxCross2 />
@@ -34,4 +33,4 @@ const PreferenceList: React.FC<IProps> = ({onToggleIsShow, onCloseExstention}) =
   )
 }
 
-export default PreferenceList
+export default IncognitoBlock

@@ -1,5 +1,4 @@
 .wrapper {
-    color: gray;
     background-color: darkgray; 
     box-sizing: border-box;
     padding: 8px 50px;
@@ -7,20 +6,27 @@
     border-radius: 8px;
     user-select: none;
     cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .wrapper:hover { 
+    background-color: rgb(200, 200, 200);
   }
 
   .support {
     display: flex;
     align-items: center;
     font-size: 15px;
-    color: crimson;
+    letter-spacing: 0.6px;
+    color: white;
   }
 
   .report {
     display: flex;
     align-items: center;
     font-size: 15px;
-    color: crimson;
+    letter-spacing: 0.6px;
+    color: white;
   }
 
   .logo {

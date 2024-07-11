@@ -13,7 +13,7 @@ const InstagramBlock: React.FC<IProps> = ({onClickInstagram}) => {
         <div className={styles.logo}>
             <BsInstagram />
         </div>
-        <div>
+        <div className={styles.text}>
             Instagram
         </div>      
     </div>

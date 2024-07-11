@@ -9,12 +9,13 @@
     justify-content: center;
     font-size: 15px;
     margin: 0px 4px 0px;
+    padding: 0px 0px 4px;
     cursor: pointer;
     user-select: none;
     transition: background-color 0.3s ease;
 }
 
-.wrapper:hover {
+.wrapper:hover { 
     background-color: rgb(70, 70, 70);
 }
 

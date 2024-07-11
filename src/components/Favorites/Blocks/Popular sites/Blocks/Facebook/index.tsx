@@ -13,7 +13,7 @@ const FacebookBlock: React.FC<IProps> = ({onClickFacebook}) => {
         <div className={styles.logo}>
             <FaFacebook />
         </div>
-        <div>
+        <div className={styles.text}>
             Facebook
         </div>
     </div>
