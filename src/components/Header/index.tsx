@@ -1,4 +1,5 @@
 import React from "react"
+import { RxCross2 } from "react-icons/rx"; 
 import styles from "./styles.module.css"
 
 type IProps = {
@@ -6,10 +7,22 @@ type IProps = {
 }
 
 const Header:React.FC<IProps> = ({ name }) => {
+
+    const onCloseExstention = () => {
+        window.close();
+        console.log('Молодец ты закрыл Расширение!')
+      }
+
     return (
         <div className={styles.wrapper}>
-            {name}
+            <div>
+                {name}
+            </div>
+            <div onClick={onCloseExstention} className={styles.logo}>
+                <RxCross2 />
+            </div>
         </div>
+
     )
 }
 

@@ -13,6 +13,12 @@ const Preference: React.FC = () => {
   const [isShow, setisShow] = useState(false) 
 
   const onToggleIsShow = () => setisShow (prev => !prev)
+
+  const onCloseExstention = () => {
+    window.close();
+    console.log('Молодец ты закрыл Расширение!')
+  }
+
   return (
     <>
     <div onClick={onToggleIsShow} className={styles.wrapper}>
@@ -28,7 +34,10 @@ const Preference: React.FC = () => {
         [styles.preferenceList]: isShow
         })}>
           <>
-          <PreferenceList onToggleIsShow={onToggleIsShow}/>
+          <PreferenceList 
+          onToggleIsShow={onToggleIsShow} 
+          onCloseExstention={onCloseExstention}   
+          />
           </>
       </div>
     </div>

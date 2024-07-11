@@ -6,44 +6,13 @@
     user-select: none;
 }
 
-a {
+.wrapper a {
     text-decoration: none !important
 }
 
-.content {
-    text-align: center;
-}
 
-.home {
-    padding: 8px 20px;
-    color: white;
-    display: flex;
-    text-align: center;
-    font-size: 15px;
-    flex-direction: column;
-    align-items: center;
-    transition: background-color 0.3s ease;
-}
-
-.home:hover{
-    background-color: rgb(70, 70, 70);
-}
-
-.favorites{
-    padding: 8px 20px;
-    color: white;
-    display: flex;
-    text-align: center;
-    font-size: 15px;
-    flex-direction: column;
-    align-items: center;
-    transition: background-color 0.3s ease;
-}
-
-.favorites:hover{
-    background-color: rgb(70, 70, 70);
-}
-
+.home, 
+.favorites, 
 .account {
     padding: 8px 20px;
     color: white;
@@ -55,14 +24,8 @@ a {
     transition: background-color 0.3s ease;
 }
 
-.account:hover{
+
+.active {
     background-color: rgb(70, 70, 70);
 }
 
-.listWrapper {
-    display: none;
-}
-
-.showListWrapper {
-    display: flex;
-}

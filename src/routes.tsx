@@ -12,6 +12,7 @@ const RoutesWrapper: React.FC = () => {
         <Route path="/" element={<Home />} />
         <Route path="account" element={<Account />} />
         <Route  path="favorites" element={<Favorites />} />
+        <Route path="*" element={<Home />} />
     </Routes>
   )
 }

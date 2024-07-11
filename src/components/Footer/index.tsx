@@ -1,37 +1,45 @@
 import { MdAccountBox } from "react-icons/md"; 
 import { BsStarFill } from "react-icons/bs"; 
 import { HiHome } from "react-icons/hi";
-// import cn from 'classnames';
-// import Home from '../Home'
-// import { useState } from 'react';
-import React from "react";
+import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import styles from './syles.module.css'
-// import Favorites from "../Favorites";
-// import Account from "../Account";
+import cn from 'classnames'
 
 
 const Footer: React.FC = ()=> {
 
 
+  const [activeLink, setActiveLink] = useState<string>('home')
+
+  const handleSetActiveLink = (link: string) => {
+    setActiveLink(link === activeLink ? '' : link);
+  };
+
   return (
       <div className={styles.wrapper}>
-        <NavLink to="favorites">
-          <div className={styles.favorites}>
+        <NavLink to="favorites" onClick={() => handleSetActiveLink('favorites')}>
+          <div className={cn(styles.favorites, {
+            [styles.active]: activeLink === 'favorites'
+          })}>
             <BsStarFill />
-            <span className={styles.text}>Favorites</span>
+            <span>Favorites</span>
           </div>
         </NavLink>
-        <NavLink to="">
-          <div className={styles.home}>
+        <NavLink to="" onClick={() => handleSetActiveLink('home')}>
+          <div className={cn(styles.home, {
+            [styles.active]: activeLink === 'home'
+          })}>
             <HiHome />
-            <span className={styles.text}>Home</span>
+            <span>Home</span>
           </div>
         </NavLink>
-        <NavLink to="account" >
-          <div className={styles.account}>
+        <NavLink to="account" onClick={() => handleSetActiveLink('account')}>
+          <div className={cn(styles.account, {
+            [styles.active]: activeLink === 'account'
+          })}>
             <MdAccountBox />
-            <span className={styles.text}>Account</span>
+            <span>Account</span>
           </div>
         </NavLink>
       </div>

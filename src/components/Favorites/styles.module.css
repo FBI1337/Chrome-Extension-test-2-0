@@ -1,7 +1,9 @@
   .wrapper {
-    text-align:  center;
-    color: red;
-    font-size: 40px;
+    display: flex;
+    flex-direction: column;
     height: 350px;
-    user-select: none;
+    max-width: 350px;
+    justify-content: center;
   }
+
+
