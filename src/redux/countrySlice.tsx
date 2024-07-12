@@ -1,13 +1,13 @@
 import { createSlice } from "@reduxjs/toolkit";
-import russia from '../components/Countres/russia.png';
-import usa from '../components/Countres/usa.png';
-import germany from '../components/Countres/germany.png';
-import brazil from '../components/Countres/brazil.png';    
-import italy from '../components/Countres/italy.png';
-import canada from '../components/Countres/canada.png';
-import argentina from '../components/Countres/argentina.png';
-import france from '../components/Countres/france.png';
-import en from '../components/Countres/en.png';
+import russia from '../components/Shared/Countres/russia.png';
+import usa from '../components/Shared/Countres/usa.png';
+import germany from '../components/Shared/Countres/germany.png';
+import brazil from '../components/Shared/Countres/brazil.png';    
+import italy from '../components/Shared/Countres/italy.png';
+import canada from '../components/Shared/Countres/canada.png';
+import argentina from '../components/Shared/Countres/argentina.png';
+import france from '../components/Shared/Countres/france.png';
+import en from '../components/Shared/Countres/en.png';
 
 
 const initialState = {

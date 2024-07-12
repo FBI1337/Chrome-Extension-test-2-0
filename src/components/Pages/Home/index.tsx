@@ -1,6 +1,6 @@
 import { useState } from 'react'
-import Toggle from '../Toggle';
-import Select from '../Select';
+import Toggle from '../../Shared/Toggle';
+import Select from '../../Shared/Select';
 // import cn from 'classnames';
 import styles from './styles.module.css'
 

@@ -1,7 +1,7 @@
 import { Route, Routes } from 'react-router-dom';
-import Home from './components/Home/index';
-import Account from './components/Account/index';
-import Favorites from './components/Favorites/index';
+import Home from './components/Pages/Home/index';
+import Account from './components/Pages/Account/index';
+import Favorites from './components/Pages/Favorites/index';
 
 import React from 'react'
 

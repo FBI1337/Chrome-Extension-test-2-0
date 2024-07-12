@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import cn from 'classnames';
 import styles from './styles.module.css';
 import SelectItem from './Item';
-import { useAppSelector } from '../../hooks';
+import { useAppSelector } from '../../../hooks';
 
 const Select: React.FC = () => {
 
