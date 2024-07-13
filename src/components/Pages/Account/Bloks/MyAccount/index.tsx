@@ -2,11 +2,20 @@ import React from 'react'
 import { MdOutlineAccountCircle } from "react-icons/md";
 import styles from './styles.module.css';
 
-const MyAccount: React.FC = () => {
+type IProps = {
+  openModalWindow: () => void
+  isModalOpen: boolean
+}
+
+const MyAccount: React.FC<IProps> = ({ openModalWindow, isModalOpen }) => {
+
+  const onClickFn = openModalWindow
+
   return (
+  <>
   <div className={styles.text}>
     My account
-    <div className={styles.wrapper}>
+    <div onClick={onClickFn} className={styles.wrapper}>
         <div className={styles.signin}>
             <div className={styles.logo}>
                 <MdOutlineAccountCircle />
@@ -15,6 +24,10 @@ const MyAccount: React.FC = () => {
         </div>
     </div>
    </div>
+   <div>
+
+   </div>
+   </>
   )
 }
 
