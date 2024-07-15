@@ -10,7 +10,7 @@ import cn from 'classnames'
 const Footer: React.FC = ()=> {
 
 
-  const [activeLink, setActiveLink] = useState<string>('home')
+  const [activeLink, setActiveLink] = useState<string>('/home')
 
   const handleSetActiveLink = (link: string) => {
     setActiveLink(link === activeLink ? '' : link);
@@ -18,25 +18,25 @@ const Footer: React.FC = ()=> {
 
   return (
       <div className={styles.wrapper}>
-        <NavLink to="favorites" onClick={() => handleSetActiveLink('favorites')}>
+        <NavLink to="/favorites" onClick={() => handleSetActiveLink('/favorites')}>
           <div className={cn(styles.favorites, {
-            [styles.active]: activeLink === 'favorites'
+            [styles.active]: activeLink === '/favorites'
           })}>
             <BsStarFill />
             <span>Favorites</span>
           </div>
         </NavLink>
-        <NavLink to="" onClick={() => handleSetActiveLink('home')}>
+        <NavLink to="/" onClick={() => handleSetActiveLink('/home')}>
           <div className={cn(styles.home, {
-            [styles.active]: activeLink === 'home'
+            [styles.active]: activeLink === '/home'
           })}>
             <HiHome />
             <span>Home</span>
           </div>
         </NavLink>
-        <NavLink to="account" onClick={() => handleSetActiveLink('account')}>
+        <NavLink to="/account" onClick={() => handleSetActiveLink('/account')}>
           <div className={cn(styles.account, {
-            [styles.active]: activeLink === 'account'
+            [styles.active]: activeLink === '/account'
           })}>
             <MdAccountBox />
             <span>Account</span>

@@ -1,21 +1,21 @@
 import React from 'react'
 import { MdOutlineAccountCircle } from "react-icons/md";
 import styles from './styles.module.css';
+import { openCenteredWindow } from '../../../../Shared/openWindowFunc';
 
-type IProps = {
-  openModalWindow: () => void
-  isModalOpen: boolean
-}
+const MyAccount: React.FC = () => {
 
-const MyAccount: React.FC<IProps> = ({ openModalWindow, isModalOpen }) => {
+  const openClickModal = () => {
+    openCenteredWindow("/register", 'Centered Window', 500, 600);
+  }
 
-  const onClickFn = openModalWindow
+
 
   return (
   <>
   <div className={styles.text}>
     My account
-    <div onClick={onClickFn} className={styles.wrapper}>
+    <div onClick={openClickModal} className={styles.wrapper}>
         <div className={styles.signin}>
             <div className={styles.logo}>
                 <MdOutlineAccountCircle />
@@ -23,9 +23,6 @@ const MyAccount: React.FC<IProps> = ({ openModalWindow, isModalOpen }) => {
             <span>Sign in</span>
         </div>
     </div>
-   </div>
-   <div>
-
    </div>
    </>
   )
