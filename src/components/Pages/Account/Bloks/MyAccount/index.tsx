@@ -6,7 +6,9 @@ import { openCenteredWindow } from '../../../../Shared/openWindowFunc';
 const MyAccount: React.FC = () => {
 
   const openClickModal = () => {
-    openCenteredWindow("/register", 'Centered Window', 500, 600);
+    const extensionId = chrome.runtime.id
+    const registerUrl = `chrome-extension://${extensionId}/index.html#/register`
+    openCenteredWindow(registerUrl, 'Centered Window', 500, 600);
   }
 
 

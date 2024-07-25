@@ -11,7 +11,7 @@ const Register: React.FC = () => {
   return (
     <div>
       <div>
-        Тут что-то будет! 
+        Хуй
       </div>
     </div>
   )
