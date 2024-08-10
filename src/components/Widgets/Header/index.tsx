@@ -15,7 +15,7 @@ const Header:React.FC<IProps> = ({ name }) => {
 
     return (
         <div className={styles.wrapper}>
-            <div>
+            <div className={styles.customfonts}>
                 {name}
             </div>
             <div onClick={onCloseExstention} className={styles.logo}>

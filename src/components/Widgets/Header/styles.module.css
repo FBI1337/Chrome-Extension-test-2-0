@@ -1,3 +1,16 @@
+@font-face {
+    font-family: 'Benzin';
+    src: local('Benzin Bold'), local('Benzin-Bold'),
+        url('Benzin-Bold.woff2') format('woff2'),
+        url('Benzin-Bold.woff') format('woff'),
+        url('Benzin-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+  }
+
+
+
+
 .wrapper {
     background-color: gray;
     padding: 10px 10px;
@@ -7,6 +20,12 @@
     white-space: nowrap;
     justify-content: space-between;
     display: flex;
+}
+
+.customfonts {
+    font-family: 'Benzin';
+    color: white;
+    user-select: none;
 }
 
 .logo {
