@@ -1,6 +1,6 @@
 .wrapper { 
     display: flex;
-    background-color: gray;
+    background-color: rgb(93, 185, 232);
     width: 350px;
     height: 100px;
     align-items: center;

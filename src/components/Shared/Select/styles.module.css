@@ -15,15 +15,16 @@
     margin-bottom: 16px;
     letter-spacing: 0.8px;
     user-select: none;
+    color: rgb(93, 185, 232);
 }
 
 .listWrapper {
     margin-top: 16px;
     border-radius: 8px;
     padding: 8px;
-    background-color: gray;
+    background-color: white;
     height: 230px;
-    overflow-y: auto;
+    overflow-y: scroll;
     max-width: 200px;
     width: 100%;
     display: none;
@@ -35,4 +36,19 @@
 
 .showListWrapper {
   display: flex;
+}
+
+
+
+.listWrapper::-webkit-scrollbar {
+    width: 8px;
+}
+
+.listWrapper::-webkit-scrollbar-track {
+    background: white;
+}
+
+.listWrapper::-webkit-scrollbar-thumb {
+    background-color: rgb(93, 185, 232);
+    border-radius: 8px;
 }

@@ -1,5 +1,5 @@
 .wrapper {
-    background-color: gray;
+    background-color: rgb(93, 185, 232);
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -26,6 +26,6 @@
 
 
 .active {
-    background-color: rgb(70, 70, 70);
+    background-color: rgb(77, 152, 190);
 }
 
