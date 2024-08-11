@@ -4,5 +4,18 @@
     flex-direction: column;
     height: 350px;
     max-width: 300px;
-    overflow-y: auto;
+    overflow-y: scroll;
   }
+
+  .wrapper::-webkit-scrollbar {
+    width: 8px;
+}
+
+.wrapper::-webkit-scrollbar-track {
+    background: white;
+}
+
+.wrapper::-webkit-scrollbar-thumb {
+    background-color: rgb(93, 185, 232);
+    border-radius: 8px;
+}
