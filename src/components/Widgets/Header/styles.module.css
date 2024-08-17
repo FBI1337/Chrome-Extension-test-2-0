@@ -1,5 +1,5 @@
 @font-face {
-    font-family: 'Benzin';
+    font-family: 'Chlen';
     src: local('Benzin Bold'), local('Benzin-Bold'),
         url('Benzin-Bold.woff2') format('woff2'),
         url('Benzin-Bold.woff') format('woff'),
@@ -23,7 +23,7 @@
 }
 
 .customfonts {
-    font-family: 'Benzin';
+    font-family: 'Chlen';
     color: white;
     user-select: none;
 }
