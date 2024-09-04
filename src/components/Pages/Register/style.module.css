@@ -1,4 +1,23 @@
-.wrapper {
+.header {
     color: black;
+    font-size: 32px;
+}
+
+.text {
+    color: black;
+    font-size: 32px;
+}
+
+.username {
+    color: black;
+}
+
+.password {
+    color: black;
+}
+
+.wrapper {
+
+    color: pink;
     font-size: 32px;
 }
