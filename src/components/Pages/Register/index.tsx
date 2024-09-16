@@ -67,13 +67,10 @@ const Register: React.FC = () => {
 
 
           <div className={styles.username}>
-              <div className={styles.laber}>
-                Имя пользователя:
-              </div>
               <div className={styles.inputer}>
                 <input
                 type="text"
-                id="username"
+                placeholder="Имя пользователя"
                 name="username"
                 value={formData.username}
                 onChange={handleInputChange}
@@ -87,15 +84,10 @@ const Register: React.FC = () => {
           </div>
 
             <div className={styles.email}>
-
-              <div className={styles.laber}>
-                Электронная почта:
-              </div>
-
               <div className={styles.inputer}>
                 <input
                 type="email"
-                id="email"
+                placeholder="Электронная почта"
                 name="email"
                 value={formData.email}
                 onChange={handleInputChange}
@@ -109,15 +101,10 @@ const Register: React.FC = () => {
             </div>
 
             <div className={styles.password}>
-
-              <div className={styles.laber}>
-                Пароль:
-              </div>
-
               <div className={styles.inputer}>
                 <input
                 type="password"
-                id="password"
+                placeholder="Пароль"
                 name="password"
                 value={formData.password}
                 onChange={handleInputChange}
