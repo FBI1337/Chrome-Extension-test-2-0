@@ -61,7 +61,7 @@ const Register: React.FC = () => {
     <>
       <Header name={HEADER_NAME}/>
       <div className={styles.wrapper}>
-        <div className={styles.uper}>Sign In</div>
+        {/* <div className={styles.uper}>Sign In</div> */}
 
         <div className={styles.forma}>
 
@@ -70,11 +70,10 @@ const Register: React.FC = () => {
               <div className={styles.inputer}>
                 <input
                 type="text"
-                placeholder="User Name"
+                placeholder="Username"
                 name="username"
                 value={formData.username}
                 onChange={handleInputChange}
-                required
                 className={errors.username ? styles.inputError : ''}
                 />
                 {errors.username && (
@@ -91,7 +90,6 @@ const Register: React.FC = () => {
                 name="email"
                 value={formData.email}
                 onChange={handleInputChange}
-                required
                 className={errors.email ? styles.inputError : ''}
                 />
                 {errors.email && (
@@ -108,7 +106,6 @@ const Register: React.FC = () => {
                 name="password"
                 value={formData.password}
                 onChange={handleInputChange}
-                required
                 className={errors.password ? styles.inputError : ''}
                 />
                 {errors.password && (

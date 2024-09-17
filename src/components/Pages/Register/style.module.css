@@ -30,26 +30,30 @@ input {
     transition: border-color 0.3s ease, background-color 0.3s ease;
 }
 
+input:invalid {
+    box-shadow: none;
+}
+
 .error {
     display: none;
     color: red;
     font-size: 12px;
-    margin-top: 5px;
     position: absolute;
-    background-color: #ffe6e6;
     padding: 5px;
+    margin-top: 5px;
     top: 100%;
     left: 0;
-    border: 1px solid red;
     border-radius: 4px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 4px 8px rgba(255, 255, 255, 0);
     z-index: 1;
 }
 
 .inputer:hover .error { 
     display: block;
-    top: 100%;
-    left: 0;
+    top: 0%;
+    left: 180px;
+    width: 140px;
+    text-align: center;
 }
 
 .inputer input:hover {
