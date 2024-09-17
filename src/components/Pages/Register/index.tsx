@@ -61,7 +61,7 @@ const Register: React.FC = () => {
     <>
       <Header name={HEADER_NAME}/>
       <div className={styles.wrapper}>
-        <div className={styles.uper}>Регистрация</div>
+        <div className={styles.uper}>Sign In</div>
 
         <div className={styles.forma}>
 
@@ -70,7 +70,7 @@ const Register: React.FC = () => {
               <div className={styles.inputer}>
                 <input
                 type="text"
-                placeholder="Имя пользователя"
+                placeholder="User Name"
                 name="username"
                 value={formData.username}
                 onChange={handleInputChange}
@@ -87,7 +87,7 @@ const Register: React.FC = () => {
               <div className={styles.inputer}>
                 <input
                 type="email"
-                placeholder="Электронная почта"
+                placeholder="E-mail"
                 name="email"
                 value={formData.email}
                 onChange={handleInputChange}
@@ -104,7 +104,7 @@ const Register: React.FC = () => {
               <div className={styles.inputer}>
                 <input
                 type="password"
-                placeholder="Пароль"
+                placeholder="Password"
                 name="password"
                 value={formData.password}
                 onChange={handleInputChange}
@@ -120,7 +120,7 @@ const Register: React.FC = () => {
 
         <div className={styles.buttoner}>
           <button type="button" onClick={handleSubmit} className={styles.downer}>
-            Зарегистрироваться
+            Sign In
           </button>
         </div>
       </div>

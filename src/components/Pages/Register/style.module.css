@@ -15,8 +15,8 @@
 
 input.inputError {
     border: none;
-    border-bottom: 2px solid rgb(93, 185, 232);
-    background-color: #ffe6e6;
+    border-bottom: 2px solid red;
+    transition: border-bottom 0.3s ease;
 }
 
 input { 
@@ -52,6 +52,20 @@ input {
     left: 0;
 }
 
+.inputer input:hover {
+    border-bottom: 2px solid rgb(82, 138, 166);
+}
+
+.inputer input:focus {
+    outline: none;
+    border-bottom: 2px solid rgb(82, 138, 166); 
+}
+
+.inputer input.error:focus {
+    outline: none;
+    border-bottom: 2px solid rgb(93, 185, 232);
+}
+
 .message{
     color: blue;
     font-size: 14px;
@@ -79,6 +93,7 @@ input {
     align-items: center;
 }
 
+
 .buttoner {
     display: flex;
     justify-content: center;
@@ -100,8 +115,16 @@ input {
 }
 
 .downer {
+    border: none;
     font-size: 32px;
+    background-color: white;
+    color: rgb(93, 185, 232);
+    border-radius: 20px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.downer:hover {
     background-color: rgb(93, 185, 232);
-    border-radius: 18px;
+    color: white;
 }
 
