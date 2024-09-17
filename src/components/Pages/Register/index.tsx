@@ -2,6 +2,7 @@ import React, { useState } from'react'
 import styles from './style.module.css'
 import Header from '../../Shared/modelHeader';
 import { HEADER_NAME } from '../../../constants';
+import * as Yup from 'yup';
 
 
 
@@ -11,6 +12,19 @@ interface RegistrFromData {
   password: string; 
 }
 
+const validation = Yup.object().shape({
+  username: Yup.string()
+    .min(3, 'Имя должно содержать минимум 3 символа')
+    .required('Имя пользователя обязательно'),
+  email: Yup.string()
+    .email('Некоретный e-mail адрес')
+    .required('Электронная почта обязательна'),
+  password: Yup.string()
+    .min(6, 'Пароль должен содержать минимум 6 символов')
+    .required('Пароль обязателен')
+
+});
+
 const Register: React.FC = () => {
 
   const [formData, setFormData] = useState<RegistrFromData>({
@@ -19,11 +33,28 @@ const Register: React.FC = () => {
     password: '',
   });
 
-  const [errors, setErrors] = useState({
-    username: '',
-    email: '',
-    password: '',
-  });
+  const [errors, setErrors] = useState<Partial<RegistrFromData>>({});
+
+  const validate = async () => {
+    try {
+      await validation.validate(formData, {abortEarly: false});
+      setErrors({});
+      return true;
+    } catch (err: unknown) {
+       if (err instanceof Yup.ValidationError) {
+        const newErrors: Partial<RegistrFromData> = {};
+
+        err.inner.forEach((validationError: Yup.ValidationError) => {
+          newErrors[validationError.path as keyof RegistrFromData] = validationError.message;
+        });
+
+        setErrors(newErrors);
+       } else {
+        console.error('Какая-то ошибка: ', err)
+       }
+       return false;
+    }
+  };
 
 
 
@@ -32,27 +63,14 @@ const Register: React.FC = () => {
       ...formData,
       [e.target.name]: e.target.value,
     });
-    setErrors({...errors, [e.target.name]: ''});
   };
 
 
-  const handleSubmit = () => {
-    const newErrors = { username: '', email: '', password: ''};
-
-    if (!formData.username) {
-      newErrors.username = 'Это поле обязательно!';
-    }
-    if (!formData.email) {
-      newErrors.email = 'Это поле обязательно!';
-    }
-    if (!formData.password) {
-      newErrors.password = 'Это поле обязательно!';
-    }
-
-    setErrors(newErrors);
-
-    if (!newErrors.username && !newErrors.email && !newErrors.password) {
-      console.log('Данные формы: ', formData);
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    const isValid = await validate();
+    if (isValid) {
+      console.log('Отправка данных: ', formData);
     }
   };
 
@@ -61,7 +79,6 @@ const Register: React.FC = () => {
     <>
       <Header name={HEADER_NAME}/>
       <div className={styles.wrapper}>
-        {/* <div className={styles.uper}>Sign In</div> */}
 
         <div className={styles.forma}>
 
