@@ -9,7 +9,8 @@ import * as Yup from 'yup';
 interface RegistrFromData { 
   username: string;
   email: string;
-  password: string; 
+  password: string;
+  confirmPassword: string;
 }
 
 const validation = Yup.object().shape({
@@ -21,9 +22,13 @@ const validation = Yup.object().shape({
     .required('Электронная почта обязательна'),
   password: Yup.string()
     .min(6, 'Пароль должен содержать минимум 6 символов')
-    .required('Пароль обязателен')
+    .required('Пароль обязателен'),
+  confirmPassword: Yup.string()
+    .oneOf([Yup.ref('password')], 'Пароли должны совпадать')
+    .required('Повторите пароль')
 
 });
+
 
 const Register: React.FC = () => {
 
@@ -31,6 +36,7 @@ const Register: React.FC = () => {
     username: '',
     email: '',
     password: '',
+    confirmPassword: '',
   });
 
   const [errors, setErrors] = useState<Partial<RegistrFromData>>({});
@@ -71,6 +77,10 @@ const Register: React.FC = () => {
     const isValid = await validate();
     if (isValid) {
       console.log('Отправка данных: ', formData);
+
+      localStorage.setItem('isAuthenticated', 'true');
+
+      window.close();
     }
   };
 
@@ -128,6 +138,22 @@ const Register: React.FC = () => {
                 {errors.password && (
                   <div className={styles.error}>{errors.password}</div>
                 )}
+              </div>
+            </div>
+
+            <div className={styles.cpassword}>
+              <div className={styles.inputer}>
+                <input 
+                type="password"
+                placeholder="Repeat the password"
+                name="confirmPassword"
+                value={formData.confirmPassword}
+                onChange={handleInputChange}
+                className={errors.confirmPassword ? styles.inputError : ''}
+                 />
+                 {errors.confirmPassword && (
+                  <div className={styles.error}>{errors.confirmPassword}</div>
+                 )}
               </div>
             </div>
         </div>

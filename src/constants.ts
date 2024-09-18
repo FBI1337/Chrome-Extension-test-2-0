@@ -5,4 +5,5 @@ export enum navegateTo {
     ACCOUNT = '/account',
     FAVORITES = '/favorites',
     REGISTER = '/register',
+    LOGIN = '/login',
 }

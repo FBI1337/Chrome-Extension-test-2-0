@@ -4,9 +4,6 @@ import MyAccount from './Bloks/MyAccount'
 import Settings from './Bloks/Settings'
 import HelpCenter from './Bloks/HelpCenter'
 
-
-
-
 const  Account : React.FC = () => {
 
   return (

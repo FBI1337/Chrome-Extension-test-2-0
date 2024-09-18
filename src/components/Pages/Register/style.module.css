@@ -13,6 +13,11 @@
     justify-content: center;
 }
 
+.cpassword {
+    display: flex;
+    justify-content: center;
+}
+
 input.inputError {
     border: none;
     border-bottom: 2px solid red;
@@ -40,7 +45,6 @@ input:invalid {
     font-size: 12px;
     position: absolute;
     padding: 5px;
-    margin-top: 5px;
     top: 100%;
     left: 0;
     border-radius: 4px;

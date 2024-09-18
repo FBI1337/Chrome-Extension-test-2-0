@@ -7,6 +7,7 @@ import React from 'react'
 import Register from './components/Pages/Register';
 import MainLayout from './layouts/MainLayout';
 import { navegateTo } from './constants';
+import Login from './components/Pages/Login';
 
 const RoutesWrapper: React.FC = () => {
 
@@ -33,6 +34,7 @@ const RoutesWrapper: React.FC = () => {
           </MainLayout>
           }/>
         <Route path={navegateTo.REGISTER} element={<Register />} />
+        <Route path={navegateTo.LOGIN} element={<Login />} />
     </Routes>
   )
 }
