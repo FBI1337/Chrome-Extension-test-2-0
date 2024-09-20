@@ -4,10 +4,10 @@ import Account from './components/Pages/Account/index';
 import Favorites from './components/Pages/Favorites/index';
 
 import React from 'react'
-import Register from './components/Pages/Register';
+import Register from './components/Pages/Authentication/Register';
 import MainLayout from './layouts/MainLayout';
 import { navegateTo } from './constants';
-import Login from './components/Pages/Login';
+import Login from './components/Pages/Authentication/Login';
 
 const RoutesWrapper: React.FC = () => {
 

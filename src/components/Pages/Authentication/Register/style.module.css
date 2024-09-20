@@ -1,4 +1,9 @@
-.login {
+.username{
+    display: flex;
+    justify-content: center;
+}
+
+.email {
     display: flex;
     justify-content: center;
 }
@@ -79,7 +84,7 @@ input:invalid {
     flex-direction: column;
     color: rgb(93, 185, 232);
     font-size: 14px;
-    user-select: none;
+    transition: transform 0.5s ease-in-out;
 }
 
 .laber {
@@ -109,6 +114,7 @@ input:invalid {
     display: flex;
     flex-direction: column;
     margin: 10px;
+    position: relative;
 }
 
 .uper {
@@ -132,27 +138,6 @@ input:invalid {
     color: white;
 }
 
-.texter {
-    display: flex;
-}
-
-.linker {
-    display: flex;
-}
-
-
-.registerLink {
-    color: rgb(93, 185, 232);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    font-size: 14px;
-    flex-direction: column;
-    user-select: none;
-}
-
-.registerLink a {
-    text-decoration: none !important;
-    color: rgb(93, 185, 232);
+.swipeRight {
+    transform: translateX(100%);
 }
