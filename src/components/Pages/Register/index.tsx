@@ -3,6 +3,7 @@ import styles from './style.module.css'
 import Header from '../../Shared/modelHeader';
 import { HEADER_NAME } from '../../../constants';
 import * as Yup from 'yup';
+import Footer from '../../Shared/modelFooter';
 
 
 
@@ -168,6 +169,7 @@ const Register: React.FC = () => {
           </button>
         </div>
       </div>
+      <Footer />
     </>
   );
 

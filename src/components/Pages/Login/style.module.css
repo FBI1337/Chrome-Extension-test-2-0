@@ -79,6 +79,7 @@ input:invalid {
     flex-direction: column;
     color: rgb(93, 185, 232);
     font-size: 14px;
+    user-select: none;
 }
 
 .laber {
@@ -129,4 +130,29 @@ input:invalid {
 .downer:hover {
     background-color: rgb(93, 185, 232);
     color: white;
+}
+
+.texter {
+    display: flex;
+}
+
+.linker {
+    display: flex;
+}
+
+
+.registerLink {
+    color: rgb(93, 185, 232);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 14px;
+    flex-direction: column;
+    user-select: none;
+}
+
+.registerLink a {
+    text-decoration: none !important;
+    color: rgb(93, 185, 232);
 }

@@ -4,6 +4,8 @@ import Header from '../../Shared/modelHeader'
 import { HEADER_NAME } from '../../../constants'
 import * as Yup from 'yup'
 import { NavLink } from 'react-router-dom'
+import Footer from '../../Shared/modelFooter'
+
 
 
 interface LoginFormData {
@@ -29,6 +31,7 @@ const Login: React.FC = () => {
   const [errors, setErrors] = useState<Partial<LoginFormData>>({});
   const [loginError, setLoginError] = useState<string | null>(null);
   const [passwordError, setPasswordErrors] = useState<string | null>(null);
+ 
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormData({
@@ -126,9 +129,15 @@ const Login: React.FC = () => {
             </div>
         </div>
         <div className={styles.registerLink}>
-            <p>Еще нет аккаунта? <NavLink to= '/register' >Зарегистрироваться</NavLink></p>
+          <div className={styles.texter}>
+          Еще нет аккаунта?
+          </div>
+          <div className={styles.linker}>
+          <NavLink to='/register'>Зарегистрироватся!</NavLink>
+          </div>
         </div>
     </div>
+    <Footer />
     </>
   );
 };

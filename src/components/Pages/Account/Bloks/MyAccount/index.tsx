@@ -25,8 +25,8 @@ const MyAccount: React.FC = () => {
 
   const openClickModal = () => {
     const extensionId = chrome.runtime.id
-    const registerUrl = `chrome-extension://${extensionId}/index.html#/login`
-    openCenteredWindow(registerUrl, 'Centered Window', 600, 500);
+    const loginUrl = `chrome-extension://${extensionId}/index.html#/login`
+    openCenteredWindow(loginUrl, 'Centered Window', 600, 500);
   }
 
   const goToProfile = () => setisShow (prev => !prev)
