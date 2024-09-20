@@ -18,13 +18,15 @@ const MyAccount: React.FC = () => {
     const authStatus = localStorage.getItem('isAuthenticated');
     if (authStatus === 'true') {
       setIsAuthenticated(true);
+    } else {
+      setIsAuthenticated(false);
     }
   }, []);
 
   const openClickModal = () => {
     const extensionId = chrome.runtime.id
-    const registerUrl = `chrome-extension://${extensionId}/index.html#/register`
-    openCenteredWindow(registerUrl, 'Centered Window', 500, 600);
+    const registerUrl = `chrome-extension://${extensionId}/index.html#/login`
+    openCenteredWindow(registerUrl, 'Centered Window', 600, 500);
   }
 
   const goToProfile = () => setisShow (prev => !prev)
@@ -37,43 +39,46 @@ const MyAccount: React.FC = () => {
     }
   }
   const handleLogout = () => {
-    localStorage.removeItem('isAuthenticated');
+    localStorage.setItem('isAuthenticated', 'false');
     setIsAuthenticated(false);
+    goToProfile();
   }
 
+  const onCloseExstention = () => {
+    window.close();
+    console.log('Молодец ты закрыл Расширение!')
+  }
 
   return (
   <>
-  <div className={styles.text}>
-    My account
-    <div 
-    onClick={handleClick}
-    className={styles.wrapper}
-    >
-        <div className={styles.signin}>
-            <div className={styles.logo}>
-                {isAuthenticated ? <CiFaceSmile /> : <MdOutlineAccountCircle />}
-            </div>
-            <span>{isAuthenticated ? 'My Profile' : 'Sign in'}</span>
-        </div>
-    </div>
-    <div>
-      <div className={cn(styles.myprofileblock, {
-        [styles.myprofilelist]: isShow
-      })}>
-        <>
-        <MyProfile 
-        />
-        </>
+    <div className={styles.text}>
+      My account
+      <div 
+      onClick={handleClick}
+      className={styles.wrapper}
+      >
+          <div className={styles.signin}>
+              <div className={styles.logo}>
+                  {isAuthenticated ? <CiFaceSmile /> : <MdOutlineAccountCircle />}
+              </div>
+              <span>{isAuthenticated ? 'My Profile' : 'Sign in'}</span>
+          </div>
       </div>
-    </div>
-    {/* {isAuthenticated && (
-      <button onClick={handleLogout} className={styles.logoutButton}>
-        Logout
-      </button>
-    )} */}
-   </div>
-   </>
+      <div>
+        <div className={cn(styles.myprofileblock, {
+          [styles.myprofilelist]: isShow
+        })}>
+          <>
+          <MyProfile 
+          goToProfile={goToProfile}
+          onCloseExstention={onCloseExstention}
+          handleLogout={handleLogout}
+          />
+          </>
+        </div>
+      </div>
+      </div>
+    </>
   )
 }
 

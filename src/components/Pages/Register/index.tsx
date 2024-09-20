@@ -78,6 +78,10 @@ const Register: React.FC = () => {
     if (isValid) {
       console.log('Отправка данных: ', formData);
 
+      localStorage.setItem('username', formData.username);
+      localStorage.setItem('email', formData.email);
+      localStorage.setItem('password', formData.password);
+
       localStorage.setItem('isAuthenticated', 'true');
 
       window.close();

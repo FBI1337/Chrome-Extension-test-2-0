@@ -1,0 +1,132 @@
+.login {
+    display: flex;
+    justify-content: center;
+}
+
+.password{ 
+    display: flex;
+    justify-content: center;
+}
+
+.cpassword {
+    display: flex;
+    justify-content: center;
+}
+
+input.inputError {
+    border: none;
+    border-bottom: 2px solid red;
+    transition: border-bottom 0.3s ease;
+}
+
+input { 
+    margin: 10px;
+    border: none;
+    border-bottom: 2px solid rgb(93, 185, 232);
+    background-color: white;
+    color: rgb(192, 103, 87);
+    text-align: center;
+    font-size: 14px;
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+input:invalid {
+    box-shadow: none;
+}
+
+.error {
+    display: none;
+    color: red;
+    font-size: 12px;
+    position: absolute;
+    padding: 5px;
+    top: 100%;
+    left: 0;
+    border-radius: 4px;
+    box-shadow: 0px 4px 8px rgba(255, 255, 255, 0);
+    z-index: 1;
+}
+
+.inputer:hover .error { 
+    display: block;
+    top: 0%;
+    left: 180px;
+    width: 140px;
+    text-align: center;
+}
+
+.inputer input:hover {
+    border-bottom: 2px solid rgb(82, 138, 166);
+}
+
+.inputer input:focus {
+    outline: none;
+    border-bottom: 2px solid rgb(82, 138, 166); 
+}
+
+.inputer input.error:focus {
+    outline: none;
+    border-bottom: 2px solid rgb(93, 185, 232);
+}
+
+.message{
+    color: blue;
+    font-size: 14px;
+}
+
+.forma {
+    display: flex;
+    flex-direction: column;
+    color: rgb(93, 185, 232);
+    font-size: 14px;
+}
+
+.laber {
+    display: flex;
+    padding: 10px;
+    width: 50%;
+}
+
+.inputer {
+    position: relative;
+    align-items: center;
+}
+
+.buttoner {
+    align-items: center;
+}
+
+
+.buttoner {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 10px 0px 10px;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+}
+
+.uper {
+    display: flex;
+    color: rgb(93, 185, 232);
+    font-size: 32px;
+    justify-content: center;
+}
+
+.downer {
+    border: none;
+    font-size: 32px;
+    background-color: white;
+    color: rgb(93, 185, 232);
+    border-radius: 20px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.downer:hover {
+    background-color: rgb(93, 185, 232);
+    color: white;
+}
