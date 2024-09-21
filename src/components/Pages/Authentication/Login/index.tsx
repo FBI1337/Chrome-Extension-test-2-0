@@ -3,7 +3,7 @@ import styles from './style.module.css'
 import Header from '../../../Shared/modelHeader'
 import { HEADER_NAME } from '../../../../constants'
 import * as Yup from 'yup'
-import { NavLink, useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import Footer from '../../../Shared/modelFooter'
 
 
@@ -93,7 +93,7 @@ const Login: React.FC = () => {
 
     setTimeout(() => {
       navigate('/register');
-    }, 500)
+    }, 300)
   };
 
 
@@ -141,14 +141,14 @@ const Login: React.FC = () => {
               </button>
             </div>
         </div>
-        <div className={`${styles.registerLink} ${isSwiped ? styles.swipeLeft : ''}`}>
+        <div className={styles.registerLink}>
           <div className={styles.texter}>
           Еще нет аккаунта?
           </div>
           <div className={styles.linker}>
-          <NavLink to="/register" onClick={handeleSwipeToRegister}>
+          <div onClick={handeleSwipeToRegister} className={styles.swipeLink}>
             Зарегистрироватся!
-          </NavLink>
+          </div>
           </div>
         </div>
     </div>
