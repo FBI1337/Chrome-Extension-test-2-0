@@ -4,6 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
+    "start": "node index.js",
     "dev": "vite",
     "build": "tsc -b && vite build",
     "build-extension": "npm run build && copy src\\manifest.json dist\\ && copy src\\assets\\icons\\** dist\\ && copy src\\components\\Shared\\Fonts\\** dist\\fonts",
@@ -13,6 +14,7 @@
   "dependencies": {
     "@reduxjs/toolkit": "^2.2.6",
     "@types/react-router-dom": "^5.3.3",
+    "@vercel/speed-insights": "^1.0.12",
     "classnames": "^2.5.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
