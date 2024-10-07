@@ -4,6 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
+    "start": "node index.js",
     "dev": "vite",
     "build": "tsc -b && vite build",
     "build-extension": "npm run build && copy src\\manifest.json dist\\ && copy src\\assets\\icons\\** dist\\ && copy src\\components\\Shared\\Fonts\\** dist\\fonts",
@@ -12,9 +13,17 @@
   },
   "dependencies": {
     "@reduxjs/toolkit": "^2.2.6",
+    "@types/express": "^5.0.0",
     "@types/react-router-dom": "^5.3.3",
+<<<<<<< HEAD
     "axios": "^1.7.7",
+=======
+    "@vercel/speed-insights": "^1.0.12",
+>>>>>>> 3190ea930e4f699a462999724d9c5bb622625983
     "classnames": "^2.5.1",
+    "express": "^4.21.0",
+    "firebase": "^10.13.2",
+    "nodemo": "^1.0.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-icons": "^5.2.1",
@@ -22,6 +31,7 @@
     "react-redux": "^9.1.2",
     "react-router-dom": "^6.24.1",
     "react-transition-group": "^4.4.5",
+    "ts-node": "^10.9.2",
     "yup": "^1.4.0"
   },
   "devDependencies": {
@@ -36,5 +46,6 @@
     "eslint-plugin-react-refresh": "^0.4.7",
     "typescript": "^5.2.2",
     "vite": "^5.3.1"
-  }
+  },
+  "proxy": "http://localhost:3001/"
 }
