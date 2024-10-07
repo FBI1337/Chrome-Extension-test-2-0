@@ -5,6 +5,7 @@ import { HEADER_NAME } from '../../../../constants';
 import * as Yup from 'yup';
 import Footer from '../../../Shared/modelFooter';
 import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 
 
 
@@ -80,17 +81,22 @@ const Register: React.FC = () => {
     e.preventDefault();
     const isValid = await validate();
     if (isValid) {
-      console.log('Отправка данных: ', formData);
-
-      localStorage.setItem('username', formData.username);
-      localStorage.setItem('email', formData.email);
-      localStorage.setItem('password', formData.password);
-      localStorage.setItem('isAuthenticated', 'true');
-
-      setIsSwiped(true);
-      setTimeout(() => {
+      try {
+        const response = await axios.post('http://localhost:5000/api/register', {
+          username: formData.username,
+          email: formData.email,
+          password: formData.password,
+        });
+        console.log('Регистрация успешна:', response.data);
+        setIsSwiped(true);
         navigate('/login');
-      }, 500);
+      } catch (error) {
+        if (axios.isAxiosError(error)){
+          console.error('Ошибка регистрации:', error.response?.data?.message || error.message);
+        } else {
+          console.error('Неизвестная ошибка:', error);
+        }
+      }
     }
   };
 

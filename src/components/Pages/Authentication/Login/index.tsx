@@ -5,6 +5,7 @@ import { HEADER_NAME } from '../../../../constants'
 import * as Yup from 'yup'
 import { useNavigate } from 'react-router-dom'
 import Footer from '../../../Shared/modelFooter'
+import axios from 'axios'
 
 
 
@@ -66,25 +67,26 @@ const Login: React.FC = () => {
     const isValid = await validate();
     if (!isValid) return;
 
-    const savedUsername = localStorage.getItem('username');
-    const savedEmail = localStorage.getItem('email');
-    const savedPassword = localStorage.getItem('password');
+    try { 
+      const response = await axios.post('http://localhost:5000/api/login', {
+        login: formData.login,
+        password: formData.password,
+      });
 
-    let isLoginValid = false;
-    if (formData.login === savedUsername || formData.login === savedEmail) {
-      isLoginValid = true;
-    } else {
-      setLoginError('Неправильный Логин');
-    }
-
-    if (formData.password === savedPassword) {
-      if (isLoginValid) {
-        console.log('Успешный вход');
-        localStorage.setItem('isAuthenticated', 'true');
-        window.close();
+      const { token } = response.data;
+      localStorage.setItem('token', token);
+      console.log('Успешный вход: ', token);
+      window.close();
+    } catch (error) {
+      if (axios.isAxiosError(error)) {
+        if (error.response?.status === 400) {
+          setLoginError('Неправильный логин или пароль');
+        } else {
+          console.error('Ошибка входа: ', error.response?.data?.message || error.message);
+        }
+      } else {
+        console.error('Неизвестная ошибка: ', error);
       }
-    } else {
-      setPasswordErrors('Неправильный пароль');
     }
   };
 
