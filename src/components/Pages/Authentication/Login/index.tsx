@@ -63,12 +63,25 @@ const Login: React.FC = () => {
     }
   };
 
+  const fetchApiUrl = async () => {
+    const response = await axios.get('/api/config');
+    const { localUrl, externalUrl } = response.data;
+
+    try {
+      await axios.get(localUrl);
+      return localUrl;
+    } catch {
+      return externalUrl;
+    }
+  };
+
   const handleSubmit = async () => {
     const isValid = await validate();
     if (!isValid) return;
 
-    try { 
-      const response = await axios.post('http://localhost:5000/api/login', {
+    try {
+      const apiUrl = await fetchApiUrl();
+      const response = await axios.post(`${apiUrl}/api/login`, {
         login: formData.login,
         password: formData.password,
       });

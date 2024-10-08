@@ -76,13 +76,26 @@ const Register: React.FC = () => {
     });
   };
 
+  const fetchApiUrl = async () => {
+    const response = await axios.get('/api/config');
+    const { localUrl, externalUrl } = response.data;
+
+    try {
+      await axios.get(localUrl);
+      return localUrl;
+    } catch {
+      return externalUrl;
+    }
+  };
+
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     const isValid = await validate();
     if (isValid) {
       try {
-        const response = await axios.post('http://localhost:5000/api/register', {
+        const apiUrl = await fetchApiUrl();
+        const response = await axios.post(`${apiUrl}/api/register`, {
           username: formData.username,
           email: formData.email,
           password: formData.password,
