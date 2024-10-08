@@ -76,6 +76,7 @@ const Login: React.FC = () => {
       const { token } = response.data;
       localStorage.setItem('token', token);
       console.log('Успешный вход: ', token);
+      localStorage.setItem('isAuthenticated', 'true');
       window.close();
     } catch (error) {
       if (axios.isAxiosError(error)) {
