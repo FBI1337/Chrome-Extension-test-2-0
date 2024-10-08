@@ -15,8 +15,15 @@
     "@reduxjs/toolkit": "^2.2.6",
     "@types/express": "^5.0.0",
     "@types/react-router-dom": "^5.3.3",
-    "@vercel/speed-insights": "^1.0.12",
+<<<<<<< HEAD
     "axios": "^1.7.7",
+=======
+    "@vercel/speed-insights": "^1.0.12",
+<<<<<<< HEAD
+    "axios": "^1.7.7",
+=======
+>>>>>>> 3190ea930e4f699a462999724d9c5bb622625983
+>>>>>>> e0c0d53725d04eb6909ef1b01d73da104ac31dc0
     "classnames": "^2.5.1",
     "express": "^4.21.0",
     "firebase": "^10.13.2",
