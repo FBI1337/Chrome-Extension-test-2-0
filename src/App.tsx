@@ -4,7 +4,7 @@ import RoutesWrapper  from './routes'
 
 
 const App: React.FC = () => {
-    
+
     return (
         <HashRouter>
           <RoutesWrapper /> 
