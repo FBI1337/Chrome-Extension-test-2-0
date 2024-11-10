@@ -77,7 +77,7 @@ const Register: React.FC = () => {
   };
 
   const fetchApiUrl = async () => {
-    const response = await axios.get('http://192.168.2.67:5000/api/config');
+    const response = await axios.get('http://192.168.2.74:5000/api/config');
     const { localUrl, externalUrl } = response.data;
 
     try {

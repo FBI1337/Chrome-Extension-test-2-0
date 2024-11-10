@@ -64,7 +64,7 @@ const Login: React.FC = () => {
   };
 
   const fetchApiUrl = async () => {
-    const response = await axios.get('http://192.168.2.67:5000/api/config');
+    const response = await axios.get('http://100.123.21.28:5000/api/config');
     const { localUrl, externalUrl } = response.data;
 
     try {
