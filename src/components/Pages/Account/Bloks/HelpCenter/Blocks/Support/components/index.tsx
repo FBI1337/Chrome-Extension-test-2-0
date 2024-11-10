@@ -1,7 +1,7 @@
 import React from 'react'
 import styles from './styles.module.css'
-import { RxCross2 } from "react-icons/rx"; 
-import { CgArrowLeft } from "react-icons/cg";
+import Header from './Header';
+import { HEADER_NAME } from '../../../../../../../../constants';
 
 type IProps = {
     onToggleIsShow: () => void
@@ -9,24 +9,22 @@ type IProps = {
 }
 
 const SupportList:React.FC<IProps> = ({onToggleIsShow, onCloseExstention}) => {
-
-    const onClickFn = onToggleIsShow
-    const onClickCross = onCloseExstention
-
   return (
-    <div>
-        <div className={styles.header}>
-            <div onClick={onClickFn} className={styles.logo}>
-                <CgArrowLeft />
-            </div>
-            <div className={styles.text}>
-                Support
-            </div>
-            <div onClick={onClickCross} className={styles.logo}>
-                <RxCross2 />
+    <>
+    <Header
+    name={HEADER_NAME}
+    onToggleIsShow={onToggleIsShow}
+    onCloseExstention={onCloseExstention}
+    />
+        <div>
+            <div className={styles.header}>
+                <div className={styles.logo}>
+                </div>
+                <div className={styles.logo}>
+                </div>
             </div>
         </div>
-    </div>
+    </>
   )
 }
 

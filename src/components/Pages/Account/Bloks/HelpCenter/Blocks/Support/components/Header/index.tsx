@@ -28,7 +28,7 @@ const Header: React.FC<IProps> = ({ name, onToggleIsShow, onCloseExstention }) =
     </div>
     </div>
     <div className={styles.box}>
-      <div className={styles.text}>Preference</div>
+      <div className={styles.text}>Support</div>
     </div>
     </div>
   )
