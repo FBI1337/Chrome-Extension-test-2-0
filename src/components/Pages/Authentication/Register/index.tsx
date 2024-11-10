@@ -18,7 +18,7 @@ interface RegistrFromData {
 
 const validation = Yup.object().shape({
   username: Yup.string()
-    .min(3, 'Имя должно содержать минимум 3 символа')
+    .min(2, 'Имя должно содержать минимум 3 символа')
     .required('Имя пользователя обязательно'),
   email: Yup.string()
     .email('Некоретный e-mail адрес')
@@ -76,17 +76,6 @@ const Register: React.FC = () => {
     });
   };
 
-  const fetchApiUrl = async () => {
-    const response = await axios.get('http://192.168.2.67:5000/api/config');
-    const { localUrl, externalUrl } = response.data;
-
-    try {
-      await axios.get(localUrl);
-      return localUrl;
-    } catch {
-      return externalUrl;
-    }
-  };
 
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -94,8 +83,7 @@ const Register: React.FC = () => {
     const isValid = await validate();
     if (isValid) {
       try {
-        const apiUrl = await fetchApiUrl();
-        const response = await axios.post(`${apiUrl}/api/register`, {
+        const response = await axios.post(`http://localhost:5000/api/register`, {
           username: formData.username,
           email: formData.email,
           password: formData.password,
