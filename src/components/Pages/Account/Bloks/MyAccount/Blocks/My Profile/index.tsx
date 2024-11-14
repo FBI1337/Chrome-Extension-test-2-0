@@ -1,7 +1,7 @@
-import React from 'react'
-import styles from './styles.module.css'
-import { RxCross2 } from "react-icons/rx"; 
-import { CgArrowLeft } from "react-icons/cg"; 
+import React from 'react' 
+import { HEADER_NAME } from '../../../../../../../constants';
+import Header from './components/Header';
+import Button from './components/button';
 
 type IProps = {
   goToProfile: () => void;
@@ -11,26 +11,19 @@ type IProps = {
 
 const MyProfile: React.FC<IProps> = ({ goToProfile, onCloseExstention, handleLogout }) => {
 
-  const onClickFn = goToProfile;
-  const onClickCross = onCloseExstention;
-
   return (
+    <>
+    <Header
+    name={HEADER_NAME}
+    goToProfile={goToProfile}
+    onCloseExstention={onCloseExstention}
+    />
     <div>
-        <div className={styles.header}>
-            <div onClick={onClickFn} className={styles.logo}>
-                <CgArrowLeft />
-            </div>
-            <div className={styles.text}>
-                My Profile
-            </div>
-            <div onClick={onClickCross} className={styles.logo}>
-                <RxCross2 />
-            </div>
-        </div>
-        <button onClick={handleLogout} className={styles.logoutButton}>
-          Logout
-        </button>
+      <Button
+      handleLogout={handleLogout}
+      />
     </div>
+    </>
   )
 }
 

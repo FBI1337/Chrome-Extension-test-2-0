@@ -20,15 +20,15 @@ const Header: React.FC<IProps> = ({ name, onToggleIsShow, onCloseExstention }) =
     <div onClick={onClickFn} className={styles.logo}>
     <CgArrowLeft />
     </div>
+    <div className={styles.box}>
     <div className={styles.customfonts}>
         {name}
+    </div>
+    <div className={styles.text}>Support</div>
     </div>
     <div onClick={onClickCross} className={styles.logo}>
     <RxCross2 />
     </div>
-    </div>
-    <div className={styles.box}>
-      <div className={styles.text}>Support</div>
     </div>
     </div>
   )

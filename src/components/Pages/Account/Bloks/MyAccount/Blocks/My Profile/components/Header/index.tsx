@@ -1,17 +1,18 @@
 import React from 'react'
 import styles from './styles.module.css'
 import { RxCross2 } from "react-icons/rx"; 
-import { CgArrowLeft } from "react-icons/cg"; 
+import { CgArrowLeft } from "react-icons/cg";
 
 type IProps = {
-    name: string
-    onToggleIsShow: () => void
-    onCloseExstention: () => void
+  name: string
+  goToProfile: () => void;
+  onCloseExstention: () => void;
 }
 
-const Header: React.FC<IProps> = ({ name, onToggleIsShow, onCloseExstention }) => {
+const Header: React.FC<IProps> = ({ name, goToProfile, onCloseExstention}) => {
 
-  const onClickFn = onToggleIsShow
+
+  const onClickFn = goToProfile
   const onClickCross = onCloseExstention
 
   return (
@@ -24,7 +25,7 @@ const Header: React.FC<IProps> = ({ name, onToggleIsShow, onCloseExstention }) =
     <div className={styles.customfonts}>
         {name}
     </div>
-    <div className={styles.text}>Report a Problem</div>
+    <div className={styles.text}>My Profile</div>
     </div>
     <div onClick={onClickCross} className={styles.logo}>
     <RxCross2 />

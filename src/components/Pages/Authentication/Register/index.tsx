@@ -4,8 +4,9 @@ import Header from '../../../Shared/modelHeader';
 import { HEADER_NAME } from '../../../../constants';
 import * as Yup from 'yup';
 import Footer from '../../../Shared/modelFooter';
-import { useNavigate } from 'react-router-dom';
+import ButtonSign from '../../../Shared/Button/SignIn';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 
 
@@ -15,6 +16,7 @@ interface RegistrFromData {
   password: string;
   confirmPassword: string;
 }
+
 
 const validation = Yup.object().shape({
   username: Yup.string()
@@ -67,17 +69,6 @@ const Register: React.FC = () => {
     }
   };
 
-
-
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
-  };
-
-
-
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     const isValid = await validate();
@@ -101,6 +92,12 @@ const Register: React.FC = () => {
     }
   };
 
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
   
   return (
     <>
@@ -176,9 +173,9 @@ const Register: React.FC = () => {
         </div>
 
         <div className={styles.buttoner}>
-          <button type="button" onClick={handleSubmit} className={styles.downer}>
-            Sign In
-          </button>
+          <ButtonSign
+          handleSubmit={handleSubmit}
+          />
         </div>
       </div>
       <Footer />
