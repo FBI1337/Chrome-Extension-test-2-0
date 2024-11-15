@@ -6,6 +6,7 @@ import * as Yup from 'yup'
 import { useNavigate } from 'react-router-dom'
 import Footer from '../../../Shared/modelFooter'
 import axios from 'axios'
+import ButtonLogin from '../../../Shared/Button/Login'
 
 
 
@@ -139,9 +140,9 @@ const Login: React.FC = () => {
             </div>
 
             <div className={styles.buttoner}>
-              <button type="button" onClick={handleSubmit} className={styles.downer}>
-                Login
-              </button>
+              <ButtonLogin
+              handleSubmit={handleSubmit}
+              />
             </div>
         </div>
         <div className={styles.registerLink}>

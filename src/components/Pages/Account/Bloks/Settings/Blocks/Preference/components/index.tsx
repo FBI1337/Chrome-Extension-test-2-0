@@ -1,5 +1,4 @@
 import React from 'react'
-import styles from './styles.module.css'
 import Header from "../components/Header/index";
 import { HEADER_NAME } from "../../../../../../../../constants";
 
@@ -21,12 +20,6 @@ const PreferenceList: React.FC<IProps> = ({onToggleIsShow, onCloseExstention}) =
     onToggleIsShow={onToggleIsShow}
     />
     <div>
-        <div className={styles.header}>
-            <div className={styles.logo}>
-            </div>
-            <div className={styles.logo}>
-            </div>
-        </div>
     </div>
     </>
   )

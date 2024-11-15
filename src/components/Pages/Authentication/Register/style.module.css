@@ -99,15 +99,11 @@ input:invalid {
 }
 
 .buttoner {
-    align-items: center;
-}
-
-
-.buttoner {
     display: flex;
     justify-content: center;
     width: 100%;
     padding: 10px 0px 10px;
+    align-items: center;
 }
 
 .wrapper {
@@ -123,20 +119,6 @@ input:invalid {
     color: rgb(93, 185, 232);
     font-size: 32px;
     justify-content: center;
-}
-
-.downer {
-    border: none;
-    font-size: 32px;
-    background-color: white;
-    color: rgb(93, 185, 232);
-    border-radius: 20px;
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.downer:hover {
-    background-color: rgb(93, 185, 232);
-    color: white;
 }
 
 .swipeRight {
