@@ -1,6 +1,6 @@
 import React, { ReactElement } from 'react'
-import Header from '../components/Shared/Header'
-import Footer from '../components/Shared/Footer'
+import Header from '../components/Shared/Header/MainHeader'
+import Footer from '../components/Shared/Footer/MainFooter'
 import { HEADER_NAME } from '../constants'
 
 

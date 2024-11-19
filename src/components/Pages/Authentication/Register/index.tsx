@@ -1,9 +1,9 @@
 import React, { useState } from'react'
 import styles from './style.module.css'
-import Header from '../../../Shared/modelHeader';
+import Header from '../../../Shared/Header/modelHeader';
 import { HEADER_NAME } from '../../../../constants';
 import * as Yup from 'yup';
-import Footer from '../../../Shared/modelFooter';
+import Footer from '../../../Shared/Footer/modelFooter';
 import ButtonSign from '../../../Shared/Button/SignIn';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
