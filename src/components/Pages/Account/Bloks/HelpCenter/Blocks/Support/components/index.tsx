@@ -15,6 +15,7 @@ const SupportList:React.FC<IProps> = ({onToggleIsShow, onCloseExstention}) => {
     name={HEADER_NAME}
     onToggleIsShow={onToggleIsShow}
     onCloseExstention={onCloseExstention}
+    variant='Support'
     />
         <div>
             <div className={styles.header}>

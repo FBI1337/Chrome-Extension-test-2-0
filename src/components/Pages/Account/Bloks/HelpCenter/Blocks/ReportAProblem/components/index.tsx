@@ -1,6 +1,6 @@
 import React from 'react'
 import styles from './styles.module.css'
-import Header from './Header';
+import Header from './../../../../../../../Shared/Header/secondHeader';
 import { HEADER_NAME } from '../../../../../../../../constants';
 
 type IProps = {
@@ -17,6 +17,7 @@ const ReportProblemList: React.FC<IProps> = ({onToggleIsShow, onCloseExstention}
     name={HEADER_NAME}
     onToggleIsShow={onToggleIsShow}
     onCloseExstention={onCloseExstention}
+    variant='Report a Problem'
     />
         <div>
             <div className={styles.header}>
