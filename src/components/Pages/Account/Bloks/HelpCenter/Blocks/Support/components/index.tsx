@@ -1,6 +1,6 @@
 import React from 'react'
 import styles from './styles.module.css'
-import Header from './Header';
+import Header from './../../../../../../../Shared/Header/secondHeader';
 import { HEADER_NAME } from '../../../../../../../../constants';
 
 type IProps = {
