@@ -1,5 +1,5 @@
 import React from 'react'
-import Header from "../components/Header/index";
+import Header from "../../../../../../../Shared/Header/secondHeader";
 import { HEADER_NAME } from "../../../../../../../../constants";
 
 type IProps = {
@@ -18,6 +18,7 @@ const PreferenceList: React.FC<IProps> = ({onToggleIsShow, onCloseExstention}) =
     name={HEADER_NAME}
     onCloseExstention={onCloseExstention}
     onToggleIsShow={onToggleIsShow}
+    variant='Preference'
     />
     <div>
     </div>

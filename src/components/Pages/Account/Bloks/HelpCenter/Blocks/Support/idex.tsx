@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 import styles from './styles.module.css'
 import { BsQuestionCircle } from "react-icons/bs";
 import cn from 'classnames'
-import SupportList from './components'
+import SupportList from './List'
 
 const Support:React.FC = () => {
 

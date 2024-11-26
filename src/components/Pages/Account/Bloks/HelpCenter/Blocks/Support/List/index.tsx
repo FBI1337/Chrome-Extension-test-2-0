@@ -1,6 +1,6 @@
 import React from 'react'
 import styles from './styles.module.css'
-import Header from './../../../../../../../Shared/Header/secondHeader';
+import Header from '../../../../../../../Shared/Header/secondHeader';
 import { HEADER_NAME } from '../../../../../../../../constants';
 
 type IProps = {
@@ -8,16 +8,14 @@ type IProps = {
     onCloseExstention: () => void
 }
 
-
-const ReportProblemList: React.FC<IProps> = ({onToggleIsShow, onCloseExstention}) => {
-
+const SupportList:React.FC<IProps> = ({onToggleIsShow, onCloseExstention}) => {
   return (
     <>
     <Header
     name={HEADER_NAME}
     onToggleIsShow={onToggleIsShow}
     onCloseExstention={onCloseExstention}
-    variant='Report a Problem'
+    variant='Support'
     />
         <div>
             <div className={styles.header}>
@@ -31,4 +29,4 @@ const ReportProblemList: React.FC<IProps> = ({onToggleIsShow, onCloseExstention}
   )
 }
 
-export default ReportProblemList
+export default SupportList

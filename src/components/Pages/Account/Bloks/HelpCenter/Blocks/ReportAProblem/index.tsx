@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import styles from './styles.module.css'
 import { BsChatLeftDots } from "react-icons/bs";
 import cn from 'classnames'
-import ReportProblemList from './components';
+import ReportProblemList from './List';
 
 const ReportProblem: React.FC = () => {
     
