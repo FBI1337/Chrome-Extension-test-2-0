@@ -7,12 +7,12 @@ import MyProfile  from './Blocks/My Profile/index'
 import cn from 'classnames';
 
 
-
 const MyAccount: React.FC = () => {
 
 
   const [isAuthenticated, setIsAuthenticated] = useState<boolean>(false);
   const [isShow, setisShow] = useState(false);
+  const onToggleIsShow = () => setisShow (prev => !prev)
 
   useEffect(() => {
     const authStatus = localStorage.getItem('isAuthenticated');
@@ -69,9 +69,9 @@ const MyAccount: React.FC = () => {
           [styles.myprofilelist]: isShow
         })}>
           <>
-          <MyProfile 
-          goToProfile={goToProfile}
+          <MyProfile
           onCloseExstention={onCloseExstention}
+          onToggleIsShow={onToggleIsShow}
           handleLogout={handleLogout}
           />
           </>
