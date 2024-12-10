@@ -11,9 +11,6 @@
     width: 8px;
 }
 
-.wrapper::-webkit-scrollbar-track {
-    background: white;
-}
 
 .wrapper::-webkit-scrollbar-thumb {
     background-color: rgb(93, 185, 232);

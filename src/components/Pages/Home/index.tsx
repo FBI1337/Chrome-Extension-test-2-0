@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import Toggle from '../../Shared/Toggle';
+import Toggle from '../../Shared/Toggle/on or off';
 import Select from '../../Shared/Select';
 // import cn from 'classnames';
 import styles from './styles.module.css'

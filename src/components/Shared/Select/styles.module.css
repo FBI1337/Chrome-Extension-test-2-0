@@ -22,7 +22,6 @@
     margin-top: 16px;
     border-radius: 8px;
     padding: 8px;
-    background-color: white;
     height: 230px;
     overflow-y: scroll;
     max-width: 200px;
@@ -44,9 +43,7 @@
     width: 8px;
 }
 
-.listWrapper::-webkit-scrollbar-track {
-    background: white;
-}
+
 
 .listWrapper::-webkit-scrollbar-thumb {
     background-color: rgb(93, 185, 232);
