@@ -79,7 +79,9 @@ const Register: React.FC = () => {
           email: formData.email,
           password: formData.password,
         });
+
         console.log('Регистрация успешна:', response.data);
+
         setIsSwiped(true);
         navigate('/login');
       } catch (error) {

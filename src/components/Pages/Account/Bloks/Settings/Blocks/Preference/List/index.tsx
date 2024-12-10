@@ -1,6 +1,7 @@
 import React from 'react'
 import Header from "../../../../../../../Shared/Header/secondHeader";
 import { HEADER_NAME } from "../../../../../../../../constants";
+import styles from './styles.module.css'
 
 type IProps = {
     onToggleIsShow: () => void
@@ -20,7 +21,8 @@ const PreferenceList: React.FC<IProps> = ({onToggleIsShow, onCloseExstention}) =
     onToggleIsShow={onToggleIsShow}
     variant='Preference'
     />
-    <div>
+    <div className={styles.wrapper}>
+        
     </div>
     </>
   )
