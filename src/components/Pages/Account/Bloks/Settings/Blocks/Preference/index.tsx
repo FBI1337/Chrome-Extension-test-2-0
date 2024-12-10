@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import styles from './styles.module.css'
 import { RiEqualizerLine } from "react-icons/ri";
 import cn from 'classnames'
-import PreferenceList from './components';
+import PreferenceList from './List';
 
 
 
