@@ -7,6 +7,7 @@ import Footer from '../../../Shared/Footer/modelFooter';
 import ButtonSign from '../../../Shared/Button/SignIn';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import ThemeProvider from '../../../../layouts/ThemeLayout';
 
 
 
@@ -103,6 +104,7 @@ const Register: React.FC = () => {
   
   return (
     <>
+    <ThemeProvider>
       <Header name={HEADER_NAME}/>
       <div className={styles.wrapper}>
 
@@ -181,6 +183,7 @@ const Register: React.FC = () => {
         </div>
       </div>
       <Footer />
+      </ThemeProvider>
     </>
   );
 

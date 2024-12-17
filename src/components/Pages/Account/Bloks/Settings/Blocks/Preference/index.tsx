@@ -1,46 +1,54 @@
-import React, { useState } from 'react'
+import React, {useEffect, useState} from 'react'
+import Header from "../../../../../../Shared/Header/secondHeader";
+import { HEADER_NAME } from "../../../../../../../constants";
 import styles from './styles.module.css'
-import { RiEqualizerLine } from "react-icons/ri";
-import cn from 'classnames'
-import PreferenceList from './List';
+import Toggle from '../../../../../../Shared/Toggle/Toggle new';
+import ThemeProvider, { useTheme } from '../../../../../../../layouts/ThemeLayout'
+import { useNavigate } from 'react-router-dom';
+
 
 
 
 const Preference: React.FC = () => {
 
+  const navigate = useNavigate ();
 
+  const { theme, toggleTheme } = useTheme();
+
+  const [isActive, setIsactive] = useState(false);
+
+  const [isVisible, setIsVisible] = useState(false);
   
-  const [isShow, setisShow] = useState(false) 
+  const onToggleActive = () => setIsactive(prev => !prev);
 
-  const onToggleIsShow = () => setisShow (prev => !prev)
-
-  const onCloseExstention = () => {
-    window.close();
-    console.log('Молодец ты закрыл Расширение!')
-  }
+  useEffect(() => {
+    setIsVisible(true);
+  }, []);
+  
+  const handeleToggle = () => {
+    onToggleActive();
+    toggleTheme();
+    theme;
+};
 
   return (
     <>
-    <div onClick={onToggleIsShow} className={styles.wrapper}>
-        <div className={styles.preference}>
-            <div className={styles.logo}>
-                <RiEqualizerLine />
-            </div>
-            <span>Preference</span>
+    <ThemeProvider>
+    <div className={`${styles.wrapper} ${isVisible ? styles.show : ''}`}>
+      <Header 
+      name={HEADER_NAME}
+      variant='Preference'
+      />
+      <div className={styles.block}>
+        <div>
+          Dark Mode
         </div>
-    </div>
-    <div>
-      <div className={cn(styles.preferenceBlock, {
-        [styles.preferenceList]: isShow
-        })}>
-          <>
-          <PreferenceList 
-          onToggleIsShow={onToggleIsShow} 
-          onCloseExstention={onCloseExstention}   
-          />
-          </>
+        <div className={styles.button}>
+        <Toggle isActive={isActive} onToggleActive={onToggleActive} handeleToggle={handeleToggle}/>
+        </div>
       </div>
     </div>
+    </ThemeProvider>
     </>
   )
 }

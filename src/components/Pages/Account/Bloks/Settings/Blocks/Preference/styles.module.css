@@ -1,67 +1,15 @@
+
 .wrapper {
-    background-color: rgb(93, 185, 232); 
-    box-sizing: border-box;
-    padding: 8px 50px;
-    margin: 8px 0px;
-    border-radius: 8px;
-    user-select: none;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-
-  .wrapper:hover { 
-    background-color: rgb(77, 152, 190);
-  }
-
-  .preference {
+    padding: 10px;
+}
+.block {
     display: flex;
+    background-color: rgb(93, 185, 232);
+    justify-content: space-between;
     align-items: center;
-    font-size: 15px;
-    letter-spacing: 0.6px;
-    color: white;
-  }
+    border-radius: 20px;
+}
 
-  .logo {
-    display: flex;
-    align-items: center;
-    margin: 0px 8px;
-  }
-
-
-  .preferenceBlock   {
-    transform: 
-    translateX(100%);
-    transition: transform 0.5s ease-in-out;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    margin: 0 0;
-    padding: 0 0;
-    border-radius: 0;
-    width: 100%;
-    height: 100%;
-    color: white;
-    background-color: white;
-    text-align: center;
-  }
-
-  .preferenceList {
-    transform: 
-    translateX(0%)
-    translateZ(0px);
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    margin: 0 0;
-    padding: 0 0;
-    border-radius: 0;
-    width: 100%;
-    height: 100%;
-    color: white;
-    background-color: white;
-    text-align: center;
-  }
+.button {
+    padding: 17px 0px 0px 0px;
+}

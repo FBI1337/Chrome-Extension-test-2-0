@@ -6,6 +6,7 @@ import HelpCenter from './Bloks/HelpCenter'
 
 const  Account : React.FC = () => {
 
+
   return (
     <div className={styles.wrapper}>
       <MyAccount />  

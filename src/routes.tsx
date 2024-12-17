@@ -8,6 +8,7 @@ import Register from './components/Pages/Authentication/Register';
 import MainLayout from './layouts/MainLayout';
 import { navegateTo } from './constants';
 import Login from './components/Pages/Authentication/Login';
+import Preference from './components/Pages/Account/Bloks/Settings/Blocks/Preference';
 
 const RoutesWrapper: React.FC = () => {
 
@@ -35,6 +36,7 @@ const RoutesWrapper: React.FC = () => {
           }/>
         <Route path={navegateTo.REGISTER} element={<Register />} />
         <Route path={navegateTo.LOGIN} element={<Login />} />
+        <Route path={navegateTo.PREFERENCE} element={<Preference />} />
     </Routes>
   )
 }

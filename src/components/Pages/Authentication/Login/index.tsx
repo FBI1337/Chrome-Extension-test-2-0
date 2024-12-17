@@ -7,6 +7,7 @@ import { useNavigate } from 'react-router-dom'
 import Footer from '../../../Shared/Footer/modelFooter'
 import axios from 'axios'
 import ButtonLogin from '../../../Shared/Button/Login'
+import ThemeProvider from '../../../../layouts/ThemeLayout'
 
 
 
@@ -105,6 +106,7 @@ const Login: React.FC = () => {
 
   return (
     <>
+    <ThemeProvider>
     <Header name={HEADER_NAME}/>
     <div className={styles.wrapper}>
         <div className={`${styles.forma} ${isSwiped ? styles.swipeLeft : ''}`}>
@@ -157,6 +159,7 @@ const Login: React.FC = () => {
         </div>
     </div>
     <Footer />
+    </ThemeProvider>
     </>
   );
 };
