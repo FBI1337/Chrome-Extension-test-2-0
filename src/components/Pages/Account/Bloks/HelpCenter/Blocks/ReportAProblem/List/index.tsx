@@ -3,20 +3,14 @@ import styles from './styles.module.css'
 import Header from '../../../../../../../Shared/Header/secondHeader';
 import { HEADER_NAME } from '../../../../../../../../constants';
 
-type IProps = {
-    onToggleIsShow: () => void
-    onCloseExstention: () => void
-}
 
 
-const ReportProblemList: React.FC<IProps> = ({onToggleIsShow, onCloseExstention}) => {
+const ReportProblemList: React.FC = () => {
 
   return (
     <>
     <Header
     name={HEADER_NAME}
-    onToggleIsShow={onToggleIsShow}
-    onCloseExstention={onCloseExstention}
     variant='Report a Problem'
     />
         <div>

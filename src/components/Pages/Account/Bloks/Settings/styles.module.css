@@ -1,5 +1,50 @@
 .text {
-    font-size: 20px;
-    color: rgb(93, 185, 232);
-    user-select: none;
-  }
+  font-size: 20px;
+  color: rgb(93, 185, 232);
+  user-select: none;
+}
+
+.wrapper {
+  background-color: rgb(93, 185, 232);
+  box-sizing: border-box;
+  padding: 8px 50px;
+  margin: 8px 0px;
+  border-radius: 8px;
+  user-select: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.wrapper:hover {
+  background-color: rgb(77, 152, 190);
+}
+
+.preference {
+  display: flex;
+  align-items: center;
+  font-size: 15px;
+  letter-spacing: 0.6px;
+  color: white;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  margin: 0px 8px;
+}
+
+.preferenceBlock {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 200px;
+  height: 100vh;
+  background-color: white;
+  box-shadow: -2px 0 5px rgb(0, 0, 0, 0.3);
+  transition: right 0.5s ease-in-out;
+  z-index: 1000;
+}
+
+.preferenceBlock.show {
+  right: 0;
+}

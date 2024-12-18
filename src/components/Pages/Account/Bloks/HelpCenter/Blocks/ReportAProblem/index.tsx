@@ -8,10 +8,6 @@ const ReportProblem: React.FC = () => {
     
     const [isShow, setisShow] = useState(false) 
     const onToggleIsShow = () => setisShow (prev => !prev)
-    const onCloseExstention = () => {
-    window.close();
-    console.log('Молодец ты закрыл Расширение!')
-}
 
   return (
     <>
@@ -29,8 +25,6 @@ const ReportProblem: React.FC = () => {
         })}>
             <>
             <ReportProblemList
-            onToggleIsShow={onToggleIsShow}
-            onCloseExstention={onCloseExstention}
             />
             </>
         </div>

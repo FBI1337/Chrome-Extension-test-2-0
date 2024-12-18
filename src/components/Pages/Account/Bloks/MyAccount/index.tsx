@@ -12,7 +12,6 @@ const MyAccount: React.FC = () => {
 
   const [isAuthenticated, setIsAuthenticated] = useState<boolean>(false);
   const [isShow, setisShow] = useState(false);
-  const onToggleIsShow = () => setisShow (prev => !prev)
 
   useEffect(() => {
     const authStatus = localStorage.getItem('isAuthenticated');
@@ -44,11 +43,6 @@ const MyAccount: React.FC = () => {
     goToProfile();
   }
 
-  const onCloseExstention = () => {
-    window.close();
-    console.log('Молодец ты закрыл Расширение!')
-  }
-
   return (
   <>
     <div className={styles.text}>
@@ -70,8 +64,6 @@ const MyAccount: React.FC = () => {
         })}>
           <>
           <MyProfile
-          onCloseExstention={onCloseExstention}
-          onToggleIsShow={onToggleIsShow}
           handleLogout={handleLogout}
           />
           </>

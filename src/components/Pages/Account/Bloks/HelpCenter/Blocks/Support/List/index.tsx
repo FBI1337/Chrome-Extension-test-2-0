@@ -8,12 +8,8 @@ interface Message {
   text: string;
 }
 
-type IProps = {
-    onToggleIsShow: () => void
-    onCloseExstention: () => void
-}
 
-const SupportList:React.FC<IProps> = ({onToggleIsShow, onCloseExstention}) => {
+const SupportList:React.FC = () => {
 
 
   const [messages, setMessages] = useState<Message[]>([]);
@@ -51,8 +47,6 @@ const SupportList:React.FC<IProps> = ({onToggleIsShow, onCloseExstention}) => {
     <>
     <Header
     name={HEADER_NAME}
-    onToggleIsShow={onToggleIsShow}
-    onCloseExstention={onCloseExstention}
     variant='Support'
     />
     <div className={styles.wrapper}>
