@@ -1,6 +1,8 @@
 
 .wrapper {
-    padding: 10px;
+    padding: 0px 20px;
+    height: 350px;
+    max-width: 300px;
 }
 .block {
     display: flex;
@@ -8,6 +10,7 @@
     justify-content: space-between;
     align-items: center;
     border-radius: 20px;
+    width: 100%;
 }
 
 .button {

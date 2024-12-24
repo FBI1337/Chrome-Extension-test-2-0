@@ -31,7 +31,7 @@ const Header: React.FC<IProps> = ({ name,  variant }) => {
     <div className={styles.customfonts}>
         {name}
     </div>
-    <div className={styles.text}>{variant}</div>
+    <div className={styles.customfonts}>{variant}</div>
     </div>
     <div onClick={onClickCross} className={styles.logo}>
     <RxCross2 />
