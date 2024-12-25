@@ -3,39 +3,33 @@ import cn from 'classnames'
 import styles from './styles.module.css'
 import { useTheme } from '../../../../layouts/ThemeLayout'
 
-type IProps = {
-    isActive: boolean
-    onToggleActive: () => void
-    handeleToggle: () => void
-}
 
-const Toggle: React.FC<IProps> = ({ isActive, onToggleActive }) => {
+const Toggle: React.FC = () => {
 
     const { theme, toggleTheme } = useTheme();
 
-    const currentType = useMemo(() => (
-      isActive ? 'On' : 'Off'
-    ), [isActive])
+    const isThemeDark = theme === 'dark';
+
+
+    const currentType = useMemo(() => (isThemeDark ? 'On' : 'Off'), [isThemeDark]);
     
     const handeleToggle = () => {
-        onToggleActive();
         toggleTheme();
-        theme;
     };
     return (
         <div className={styles.toggleWrapper}>
             <div 
                 className={cn(styles.switch, {
-                    [styles.on]: isActive,
-                    [styles.off]: !isActive,
+                    [styles.on]: isThemeDark,
+                    [styles.off]: !isThemeDark,
                 })} 
                 onClick={handeleToggle}
             >
                 <div className={styles.toggle}>
                     <span 
                         className={cn(styles.text, {
-                            [styles.textOn]: isActive,
-                            [styles.textOff]: !isActive,
+                            [styles.textOn]: isThemeDark,
+                            [styles.textOff]: !isThemeDark,
                         })} 
                     >
                     {currentType}

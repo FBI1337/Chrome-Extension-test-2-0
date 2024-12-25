@@ -7,12 +7,17 @@
 .block {
     display: flex;
     background-color: rgb(93, 185, 232);
-    justify-content: space-between;
+    color: white;
+    justify-content: space-around;
     align-items: center;
     border-radius: 20px;
+    font-size: 16px;
     width: 100%;
+    margin: 10px 0px 0px 0px;
 }
 
 .button {
-    padding: 17px 0px 0px 0px;
+    position: relative;
+    top: 8px;
+    left: 14px;
 }

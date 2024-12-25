@@ -9,6 +9,7 @@ const MyProfile: React.FC = () => {
 
   const handleLogout = () => {
     localStorage.setItem('isAuthenticated', 'false');
+    localStorage.removeItem('token');
     navigate('/');
   }
 

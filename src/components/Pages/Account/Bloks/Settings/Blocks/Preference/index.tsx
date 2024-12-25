@@ -1,8 +1,7 @@
-import React, { useState} from 'react'
+import React from 'react'
 import Header from "../../../../../../Shared/Header/secondHeader";
 import { HEADER_NAME } from "../../../../../../../constants";
 import styles from './styles.module.css'
-import { useTheme } from '../../../../../../../layouts/ThemeLayout'
 import Toggle from '../../../../../../Shared/Toggle/Toggle new';
 
 
@@ -10,17 +9,6 @@ import Toggle from '../../../../../../Shared/Toggle/Toggle new';
 
 const Preference: React.FC = () => {
 
-  const { theme, toggleTheme } = useTheme();
-
-  const [isActive, setIsactive] = useState(false);
-  
-  const onToggleActive = () => setIsactive(prev => !prev);
-  
-  const handeleToggle = () => {
-    onToggleActive();
-    toggleTheme();
-    theme;
-};
 
   return (
     <>
@@ -34,7 +22,7 @@ const Preference: React.FC = () => {
           Dark Mode
         </div>
         <div className={styles.button}>
-        <Toggle isActive={isActive} onToggleActive={onToggleActive} handeleToggle={handeleToggle} />
+        <Toggle />
         </div>
       </div>
       </div>

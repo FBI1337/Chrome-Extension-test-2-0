@@ -16,22 +16,15 @@ const HelpCenter: React.FC = () => {
 
   const location = useLocation();
 
-  const isSupportVisible = location.pathname === '/support';
-  const isSupportChatVisible = location.pathname === '/supportchat';
+  const isVisible = isAdmin
+    ? location.pathname === '/supportchat'
+    : location.pathname === '/support';
 
-  const onToggleIsShow = () => {
-    if (isSupportVisible) {
+  const onToggleVisbility = () => {
+    if (isVisible) {
       navigate(-1);
     } else {
-      navigate('/support')
-    }
-  };
-
-  const onToggleIsSupportChat = () => {
-    if (isSupportChatVisible) {
-      navigate(-1);
-    } else {
-      navigate('/supportchat')
+      navigate(isAdmin ? '/supportchat' : '/support');
     }
   };
 
@@ -59,39 +52,23 @@ const HelpCenter: React.FC = () => {
     <div className={styles.text}>
         Help center
 
-        <div onClick={onToggleIsShow} className={styles.wrapper}>
+        <div onClick={onToggleVisbility} className={styles.wrapper}>
         <div className={styles.support}>
             <div className={styles.logo}>
                 <BsQuestionCircle />
             </div>
-            <span>Support</span>
+            <span>{isAdmin ? 'Support Chat' : 'Support'}</span>
         </div>
         </div>
 
-        {isAdmin && (
-          <div onClick={onToggleIsSupportChat} className={styles.wrapper}>
-            <div className={styles.support}>
-              <div className={styles.logo}>
-                <BsQuestionCircle />
-              </div>
-              <span>Support Chat</span>
-            </div>
-          </div>
-        )}
-
-        <div className={cn(styles.supportBlock, {
-          [styles.show]: isSupportVisible,
-        })}>
-          <Support />
-          </div>
-
-          {isAdmin && (
-            <div className={cn(styles.supportBlock, {
-              [styles.show]: isSupportChatVisible,
-            })}>
-              <SupportChat />
-            </div>
-          )}
+        <div
+        className={cn(styles.supportBlock, {
+          [styles.show]: isVisible,
+        })}
+      >
+        {isAdmin ? <SupportChat /> : <Support />}
+      </div>
+      
         <ReportProblem/>
     </div>
   )
