@@ -1,4 +1,5 @@
 .wrapper {
+<<<<<<< Updated upstream
     background-color: rgb(93, 185, 232); 
     box-sizing: border-box;
     padding: 8px 50px;
@@ -8,6 +9,18 @@
     cursor: pointer;
     transition: background-color 0.3s ease;
   }
+=======
+    padding: 10px;
+}
+.block {
+    display: flex;
+    background-color: rgb(93, 185, 232);
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 20px;
+    width: 100%;
+}
+>>>>>>> Stashed changes
 
   .wrapper:hover { 
     background-color: rgb(77, 152, 190);
