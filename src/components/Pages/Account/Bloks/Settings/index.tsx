@@ -44,7 +44,6 @@ const Settings: React.FC = () => {
     >
       <Preference />
     </div>
-
     <IncognitoMode />
   </div>
   )

@@ -6,11 +6,8 @@ type IProps = {
 }
 
 const ButtonOut: React.FC<IProps> = ({ handleLogout }) => {
-
-    const Out = handleLogout
-
   return (
-    <button onClick={Out} className={styles.logoutbutton}>
+    <button onClick={handleLogout} className={styles.logoutbutton}>
         Logout
     </button>
   )

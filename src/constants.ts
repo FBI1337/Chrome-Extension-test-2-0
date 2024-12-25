@@ -7,4 +7,8 @@ export enum navegateTo {
     REGISTER = '/register',
     LOGIN = '/login',
     PREFERENCE = '/preference',
+    SUPPORT = '/support',
+    REPORT = '/report',
+    MYPROFILE = '/myprofile',
+    SUPPORTCHAT = '/supportchat',
 }

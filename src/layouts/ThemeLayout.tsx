@@ -16,9 +16,15 @@ const ThemeProvider: React.FC<{children: ReactNode}> = ({ children }) => {
         const root = document.documentElement;
         if (newTheme === 'light') {
             root.style.setProperty('background-color', 'white');
+            root.style.setProperty('input-background-color', 'white');
         } else {
+            root.style.setProperty('input-background-color', 'gray');
             root.style.setProperty('background-color', 'gray');
         }
+
+        document.querySelectorAll('input').forEach((input) => {
+            input.style.backgroundColor = getComputedStyle(root).getPropertyValue('input-background-color');
+        });
     };
 
     const toggleTheme = () => {

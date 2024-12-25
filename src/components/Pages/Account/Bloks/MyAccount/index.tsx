@@ -3,23 +3,17 @@ import React, { useState, useEffect } from 'react'
 import { MdOutlineAccountCircle } from "react-icons/md";
 import styles from './styles.module.css';
 import { openCenteredWindow } from '../../../../Shared/openWindowFunc';
-import MyProfile  from './Blocks/My Profile/index'
-import cn from 'classnames';
+import { useNavigate } from 'react-router-dom';
 
 
 const MyAccount: React.FC = () => {
 
-
+  const navigate = useNavigate();
   const [isAuthenticated, setIsAuthenticated] = useState<boolean>(false);
-  const [isShow, setisShow] = useState(false);
 
   useEffect(() => {
     const authStatus = localStorage.getItem('isAuthenticated');
-    if (authStatus === 'true') {
-      setIsAuthenticated(true);
-    } else {
-      setIsAuthenticated(false);
-    }
+    setIsAuthenticated(authStatus === 'true');
   }, []);
 
   const openClickModal = () => {
@@ -28,29 +22,19 @@ const MyAccount: React.FC = () => {
     openCenteredWindow(loginUrl, 'Centered Window', 600, 500);
   }
 
-  const goToProfile = () => setisShow (prev => !prev)
-
   const handleClick = () => {
     if (isAuthenticated) {
-      goToProfile();
+      navigate('/myprofile');
     } else {
       openClickModal();
     }
-  }
-  const handleLogout = () => {
-    localStorage.setItem('isAuthenticated', 'false');
-    setIsAuthenticated(false);
-    goToProfile();
-  }
+  };
 
   return (
   <>
     <div className={styles.text}>
       My account
-      <div 
-      onClick={handleClick}
-      className={styles.wrapper}
-      >
+      <div onClick={handleClick} className={styles.wrapper}>
           <div className={styles.signin}>
               <div className={styles.logo}>
                   {isAuthenticated ? <CiFaceSmile /> : <MdOutlineAccountCircle />}
@@ -58,19 +42,8 @@ const MyAccount: React.FC = () => {
               <span>{isAuthenticated ? 'My Profile' : 'Sign in'}</span>
           </div>
       </div>
-      <div>
-        <div className={cn(styles.myprofileblock, {
-          [styles.myprofilelist]: isShow
-        })}>
-          <>
-          <MyProfile
-          handleLogout={handleLogout}
-          />
-          </>
-        </div>
-      </div>
-      </div>
-    </>
+    </div>
+  </>
   )
 }
 

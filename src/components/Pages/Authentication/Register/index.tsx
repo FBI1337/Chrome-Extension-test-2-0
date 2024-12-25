@@ -167,6 +167,7 @@ const Register: React.FC = () => {
                 name="confirmPassword"
                 value={formData.confirmPassword}
                 onChange={handleInputChange}
+                onKeyPress={(e) => e.key === 'Enter' && handleSubmit(e)}
                 className={errors.confirmPassword ? styles.inputError : ''}
                  />
                  {errors.confirmPassword && (

@@ -1,67 +1,85 @@
 .wrapper {
-    background-color: rgb(93, 185, 232); 
-    box-sizing: border-box;
-    padding: 8px 50px;
-    margin: 8px 0px;
-    border-radius: 8px;
-    user-select: none;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
+  border-radius: 8px;
+}
 
-  .wrapper:hover { 
-    background-color: rgb(77, 152, 190);
-  }
+.wrapper::-webkit-scrollbar {
+  width: 8px;
+}
 
-  .support {
-    display: flex;
-    align-items: center;
-    font-size: 15px;
-    letter-spacing: 0.6px;
-    color: white;
-  }
+.wrapper::-webkit-scrollbar-thumb {
+  background-color: rgb(93, 185, 232);
+  border-radius: 8px;
+}
 
-  .logo {
-    display: flex;
-    align-items: center;
-    margin: 0px 8px;
-  }
+.dont {
+  height: 340px;
+  max-width: 290px;
+  overflow-y: scroll;
+  padding: 0px 10px;
+  text-align: center;
+  font-size: 17px;
+}
 
+.dont::-webkit-scrollbar {
+  width: 8px;
+}
 
-  .supportBlock   {
-    transform: 
-    translateX(100%);
-    transition: transform 0.5s ease-in-out;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    margin: 0 0;
-    padding: 0 0;
-    border-radius: 0;
-    background-color: white;
-    width: 100%;
-    height: 100%;
-    color: crimson;
-    text-align: center;
-  }
+.dont::-webkit-scrollbar-thumb {
+  background-color: rgb(93, 185, 232);
+  border-radius: 8px;
+}
 
-  .supportList {
-    transform: 
-    translateX(0%)
-    translateZ(0px);
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    margin: 0 0;
-    padding: 0 0;
-    border-radius: 0;
-    background-color: white;
-    width: 100%;
-    height: 100%;
-    color: crimson;
-    text-align: center;
-  }
+.message {
+  color: rgb(93, 185, 232);
+}
+
+.buttonWrapper {
+  display: flex;
+  height: 41px;
+}
+
+.sendMessage {
+  display: flex;
+  padding: 5px;
+  align-items: center;
+}
+
+.button {
+  background-color: rgb(93, 185, 232);
+  border-radius: 30px;
+  width: 41px;
+  border: none;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: rgb(77, 152, 190);
+}
+
+.logo {
+  font-size: 29px;
+  display: flex;
+}
+
+.bmw {
+  margin: 4px;
+  padding: 0px;
+  width: 100%;
+  border: none;
+  border-bottom: 2px solid rgb(93, 185, 232);
+  background-color: white;
+  color: rgb(93, 185, 232);
+  text-align: left;
+  font-size: 17px;
+  user-select: none;
+  transition: border-color 0.3s ease, background-color 0.3s ease;
+  outline: none;
+}
+
+.bmw:hover {
+  border-bottom: 2px solid rgb(82, 138, 166);
+}
+
+.bmw:focus {
+  border-bottom: 2px solid rgb(82, 138, 166);
+}

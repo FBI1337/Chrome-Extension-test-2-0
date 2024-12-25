@@ -3,6 +3,7 @@ import Toggle from '../../Shared/Toggle/on or off';
 import Select from '../../Shared/Select';
 // import cn from 'classnames';
 import styles from './styles.module.css'
+import { useAppSelector } from '../../../hooks';
 
 
 const Home : React.FC = () => {
@@ -17,13 +18,31 @@ const Home : React.FC = () => {
     return savedTimer ? JSON.parse(savedTimer) : 0;
   });
 
-  const [speed, setSpeed] = useState<number>(0);
+  const [speed, setSpeed] = useState<string>('-');
+  const selectedCountry = useAppSelector((state) => 
+    state.countries.countriesList.find(
+      (el) => el.id === Number(localStorage.getItem('selectedCountryId'))
+    )
+  );
 
   const formatTime = (totalSeconds: number): string => {
     const hours = Math.floor(totalSeconds / 3600);
     const minutes = Math.floor((totalSeconds % 3600) / 60);
     const seconds = totalSeconds % 60;
     return `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+  };
+
+  const measureSpeed = async () => {
+    const startTime = performance.now();
+    const response = await fetch('https://speed.cloudflare.com/__down?bytes=100000000');
+    const blob = await response.blob();
+    const endTime = performance.now();
+
+    const sizeInBytes = blob.size;
+    const timeInSeconds = (endTime - startTime) / 1000;
+    const speedInMbps = ((sizeInBytes / timeInSeconds) * 8) / 1_000_000;
+    
+    setSpeed(`${Math.floor(speedInMbps)} MB/s`);
   };
 
   useEffect(() => {
@@ -36,15 +55,21 @@ const Home : React.FC = () => {
           localStorage.setItem('timer', JSON.stringify(updatedTimer));
           return updatedTimer;
         });
-        setSpeed(Math.floor(Math.random() * 100)+ 1);
+
+        if (selectedCountry?.country === 'Russia') {
+          measureSpeed();
+        } else {
+          setSpeed(`${Math.floor(Math.random() * 150)+ 1} MB/s`);
+        }
       }, 1000);
+
       return () => clearInterval(interval);
     } else {
       setTimer(0);
-      setSpeed(0);
+      setSpeed('-');
       localStorage.setItem('timer', JSON.stringify(0));
     }
-  }, [isActive]);
+  }, [isActive, selectedCountry]);
 
   const onToggleActive = () => setIsactive((prev: boolean) => !prev);
 
@@ -54,7 +79,7 @@ const Home : React.FC = () => {
       <Select />
         <div className={styles.info}>
           <p>Timer: { isActive ? formatTime(timer) : '00:00:00'}</p>
-          <p>Speed: { isActive ? `${speed} MB/s` : '-'}</p>
+          <p>Speed: { isActive ? `${speed} ` : '-'}</p>
         </div>
       <Toggle isActive={isActive} onToggleActive={onToggleActive} />
     </div>

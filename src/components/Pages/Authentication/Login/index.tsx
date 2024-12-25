@@ -134,6 +134,7 @@ const Login: React.FC = () => {
                     name="password"
                     value={formData.password}
                     onChange={handleInputChange}
+                    onKeyPress={(e) => e.key === 'Enter' && handleSubmit()}
                     className={`${styles.input} ${errors.password || passwordError ? styles.inputError : ''}`}
                     />
                     {errors.password && <div className={styles.error}>{errors.password}</div>}

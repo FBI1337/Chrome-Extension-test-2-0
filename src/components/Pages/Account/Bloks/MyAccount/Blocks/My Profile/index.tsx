@@ -2,12 +2,15 @@ import React from 'react'
 import { HEADER_NAME } from '../../../../../../../constants';
 import Header from '../../../../../../Shared/Header/secondHeader';
 import Button from '../../../../../../Shared/Button/Logout';
+import { useNavigate } from 'react-router-dom';
 
-type IProps = {
-  handleLogout: () => void;
-}
+const MyProfile: React.FC = () => {
+  const navigate = useNavigate();
 
-const MyProfile: React.FC<IProps> = ({ handleLogout }) => {
+  const handleLogout = () => {
+    localStorage.setItem('isAuthenticated', 'false');
+    navigate('/');
+  }
 
   return (
     <>
