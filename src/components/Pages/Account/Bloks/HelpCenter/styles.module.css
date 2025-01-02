@@ -19,6 +19,14 @@
     background-color: rgb(77, 152, 190);
   }
 
+  .reportproblem {
+    display: flex;
+    align-items: center;
+    font-size: 15px;
+    letter-spacing: 0.6px;
+    color: white;
+  }
+
   .support {
     display: flex;
     align-items: center;
@@ -33,6 +41,18 @@
     margin: 0px 8px;
   }
 
+  .reportBlock{
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 200px;
+    height: 100vh;
+    background-color: white;
+    box-shadow: -2px 0 5px rgb(0, 0, 0, 0.3);
+    transition: right 0.5s ease-in-out;
+    z-index: 1000;
+  }
+
   .supportBlock {
     position: fixed;
     top: 0;
@@ -43,6 +63,10 @@
     box-shadow: -2px 0 5px rgb(0, 0, 0, 0.3);
     transition: right 0.5s ease-in-out;
     z-index: 1000;
+  }
+
+  .reportBlock.show {
+    right: 0;
   }
 
   .supportBlock.show {

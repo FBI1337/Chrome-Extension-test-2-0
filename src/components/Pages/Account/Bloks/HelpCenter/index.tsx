@@ -1,12 +1,13 @@
 import React , {useEffect, useState}from 'react'
 import styles from './styles.module.css'
-import ReportProblem from './Blocks/ReportAProblem'
+import cn from 'classnames'
+import axios from 'axios';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { BsQuestionCircle } from "react-icons/bs";
+import { BsChatLeftDots } from "react-icons/bs";
+import ReportProblem from './Blocks/ReportAProblem'
 import SupportChat from './Blocks/SupportChat';
 import Support from './Blocks/Support/idex'
-import cn from 'classnames'
-import { useLocation, useNavigate } from 'react-router-dom';
-import axios from 'axios';
 
 
 const HelpCenter: React.FC = () => {
@@ -16,16 +17,26 @@ const HelpCenter: React.FC = () => {
 
   const location = useLocation();
 
+  const isShow = location.pathname === '/report';
+
   const isVisible = isAdmin
     ? location.pathname === '/supportchat'
     : location.pathname === '/support';
 
-  const onToggleVisbility = () => {
+  const supportAndsupportChat = () => {
     if (isVisible) {
       navigate(-1);
     } else {
       navigate(isAdmin ? '/supportchat' : '/support');
     }
+  };
+
+  const ReportAProblem = () => {
+    if (isShow) {
+      navigate(-1);
+    } else {  
+      navigate('/report');
+    } 
   };
 
   useEffect(() => {
@@ -52,7 +63,7 @@ const HelpCenter: React.FC = () => {
     <div className={styles.text}>
         Help center
 
-        <div onClick={onToggleVisbility} className={styles.wrapper}>
+        <div onClick={supportAndsupportChat} className={styles.wrapper}>
         <div className={styles.support}>
             <div className={styles.logo}>
                 <BsQuestionCircle />
@@ -68,8 +79,23 @@ const HelpCenter: React.FC = () => {
       >
         {isAdmin ? <SupportChat /> : <Support />}
       </div>
-      
-        <ReportProblem/>
+
+      <div onClick={ReportAProblem} className={styles.wrapper}>
+        <div className={styles.reportproblem}>
+          <div className={styles.logo}>
+            <BsChatLeftDots />
+          </div>
+          <span>Report a problem</span>
+        </div>
+      </div>
+
+      <div
+      className={cn(styles.reportBlock, {
+        [styles.show]: isShow,
+      })}
+      >
+        <ReportProblem />
+      </div>
     </div>
   )
 }

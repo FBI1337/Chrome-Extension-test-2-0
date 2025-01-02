@@ -16,6 +16,7 @@ import Support from './components/Pages/Account/Bloks/HelpCenter/Blocks/Support/
 import SupportChat from './components/Pages/Account/Bloks/HelpCenter/Blocks/SupportChat';
 import MyProfile from './components/Pages/Account/Bloks/MyAccount/Blocks/My Profile';
 import Preference from './components/Pages/Account/Bloks/Settings/Blocks/Preference';
+import ReportProblem from './components/Pages/Account/Bloks/HelpCenter/Blocks/ReportAProblem';
 
 const RoutesWrapper: React.FC = () => {
 
@@ -46,6 +47,7 @@ const RoutesWrapper: React.FC = () => {
         <Route path={navegateTo.LOGIN} element={<Login />} />
         <Route path={navegateTo.PREFERENCE} element={<Preference />} />
         <Route path={navegateTo.SUPPORT} element={<Support />} />
+        <Route path={navegateTo.REPORT} element={<ReportProblem />} />
         <Route path={navegateTo.SUPPORTCHAT} element={<SupportChat />} />
         <Route path={navegateTo.MYPROFILE} element={<MyProfile />} />
     </Routes>
