@@ -1,5 +1,6 @@
 .wrapper {
   border-radius: 8px;
+  width: 274px;
 }
 
 .wrapper::-webkit-scrollbar {
@@ -65,16 +66,10 @@
   margin: 4px;
   padding: 0px;
   width: 100%;
-  border: none;
-  border-bottom: 2px solid rgb(93, 185, 232);
-  background-color: white;
-  color: rgb(93, 185, 232);
   text-align: left;
-  font-size: 17px;
-  user-select: none;
   transition: border-color 0.3s ease, background-color 0.3s ease;
-  outline: none;
 }
+
 
 .bmw:hover {
   border-bottom: 2px solid rgb(82, 138, 166);

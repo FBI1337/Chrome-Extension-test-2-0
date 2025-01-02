@@ -10,3 +10,18 @@ body {
   height: 100dvh;
   overflow: auto;
 }
+
+input {
+  margin: 10px;
+  border: none;
+  border-bottom: 2px solid rgb(93, 185, 232);
+  color: rgb(93, 185, 232);
+  user-select: none;
+  outline: none;
+  font-size: 14px;
+  background-color: var(--input-background-color);
+}
+
+input::placeholder {
+  color: var(--placeholder-color);
+}

@@ -12,7 +12,7 @@ import ThemeProvider from './layouts/ThemeLayout';
 import Register from './components/Pages/Authentication/Register';
 import Login from './components/Pages/Authentication/Login';
 
-import Support from './components/Pages/Account/Bloks/HelpCenter/Blocks/Support/idex';
+import Support from './components/Pages/Account/Bloks/HelpCenter/Blocks/Support';
 import SupportChat from './components/Pages/Account/Bloks/HelpCenter/Blocks/SupportChat';
 import MyProfile from './components/Pages/Account/Bloks/MyAccount/Blocks/My Profile';
 import Preference from './components/Pages/Account/Bloks/Settings/Blocks/Preference';

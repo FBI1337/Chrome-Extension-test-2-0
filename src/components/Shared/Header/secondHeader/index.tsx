@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom';
 
 type IProps = {
     name: string
-    variant: 'Preference' | 'Support' | 'Report a Problem' | 'My Profile'
+    variant: 'Preference' | 'Support' | 'Report a Problem' | 'My Profile' | 'Support Chat'
 }
 
 const Header: React.FC<IProps> = ({ name,  variant }) => {

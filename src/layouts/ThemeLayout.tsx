@@ -21,14 +21,22 @@ const ThemeProvider: React.FC<{children: ReactNode}> = ({ children }) => {
             root.style.setProperty('background-color', 'white');
             root.style.setProperty('color', 'black');
             root.style.setProperty('input-background-color', 'white');
+            root.style.setProperty('--placeholder-color', 'gray');
         } else {
             root.style.setProperty('input-background-color', 'gray');
+            root.style.setProperty('--button-background-color', 'gray');
             root.style.setProperty('color', 'white');
+            root.style.setProperty('--placeholder-color', 'white');
             root.style.setProperty('background-color', 'gray');
         }
 
         document.querySelectorAll('input').forEach((input) => {
             input.style.backgroundColor = getComputedStyle(root).getPropertyValue('input-background-color');
+        });
+
+        document.querySelectorAll('button').forEach((button) => {
+            button.style.backgroundColor = getComputedStyle(root).getPropertyValue('--button-background-color');
+            button.style.color = getComputedStyle(root).getPropertyValue('--button-text-color');
         });
     };
 

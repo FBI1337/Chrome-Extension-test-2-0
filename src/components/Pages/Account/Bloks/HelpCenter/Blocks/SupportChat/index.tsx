@@ -1,6 +1,8 @@
 import axios from 'axios';
 import React, { useEffect } from 'react'
 import styles from './styles.module.css'
+import Header from '../../../../../../Shared/Header/secondHeader';
+import { HEADER_NAME } from '../../../../../../../constants';
 
 interface User {
   id: string;
@@ -49,6 +51,12 @@ const SupportChat: React.FC = () => {
 
     
   return (
+    <>
+    <Header
+    name={HEADER_NAME}
+    variant='Support Chat'
+    />
+
     <div className={styles.wrapper}>
       <div className={styles.userList}>
         <h2>Пользователи</h2>
@@ -81,6 +89,7 @@ const SupportChat: React.FC = () => {
         )}
       </div>
     </div>
+    </>
   )
 }
 

@@ -7,7 +7,7 @@ import { BsQuestionCircle } from "react-icons/bs";
 import { BsChatLeftDots } from "react-icons/bs";
 import ReportProblem from './Blocks/ReportAProblem'
 import SupportChat from './Blocks/SupportChat';
-import Support from './Blocks/Support/idex'
+import Support from './Blocks/Support';
 
 
 const HelpCenter: React.FC = () => {
