@@ -21,8 +21,10 @@
 
 .text {
     padding: 5px 5px 15px;
+    color: white;
 }
 
 .logo {
     padding: 10px 0px 10px;
+    color: white;
 }

@@ -9,6 +9,7 @@ import { jwtDecode } from "jwt-decode";
 interface Message {
     sender: string;
     text: string;
+    timestamp: string;
   }
 
   interface DecodedToken {
@@ -31,6 +32,18 @@ const Support:React.FC = () => {
       try {
         const decoded = jwtDecode<DecodedToken>(token);
         setUserId(decoded.id);
+
+        axios
+        .get(`http://localhost:5000/api/messages`, {
+          headers: { Authorization: `Bearer ${token}` },
+        })
+        .then((response) => {
+          const fetchedMessages = response.data.messages;
+          setMessages(fetchedMessages);
+        })
+        .catch((error) => {
+          console.error('Ошибка при загрузке сообщений:', error.response?.data || error.message);
+        });
       } catch (error) {
         console.error('Ошибка при декодировании токена:', error);
     }
@@ -53,22 +66,31 @@ const Support:React.FC = () => {
     if (ws && input.trim() && userId) {
         try {
 
-          const message: Message = { sender: userId, text: input };
+          const message: Message = { sender: userId, text: input, timestamp: new Date().toISOString() };
 
-          await axios.post('http://localhost:5000/api/messages', {
-            userId,
-            text: input
-          });
+          await axios.post(
+            'http://localhost:5000/api/messages',
+
+            { userId, text: input },
+            {
+              headers: {
+                Authorization: `Bearer ${localStorage.getItem('token')}`,
+              },
+            }
+          );
 
           ws.send(JSON.stringify(message));
           setMessages((prevMessages) => [...prevMessages, message]);
           setInput("");
 
         } catch (error) {
-          console.error("Ошибка при сохранении сообщения:", error);
+          if (axios.isAxiosError(error)) {
+            console.error('Ошибка при сохранении сообщения:', error.response?.data || error.message);
+          } else {
+            console.error('Неизвестная ошибка:', error);
         }
-
     }
+  }
 };
 
   return (
@@ -80,11 +102,15 @@ const Support:React.FC = () => {
       />
       <div className={styles.wrapper}>
       <div className={styles.dont}>
-        {messages.map((msg, index) => (
+        {messages && messages.length > 0 ? (
+          messages.map((msg, index) => (
           <div key={index} className={styles.message}>
             <strong>{msg.sender}:</strong> {msg.text}
           </div>
-        ))}
+          ))
+        ) : (
+          <div className={styles.message}>Нет сообщений</div>
+        )}
       </div>
       <div className={styles.sendMessage}>
       <input

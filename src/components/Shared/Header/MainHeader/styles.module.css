@@ -8,8 +8,9 @@
     font-style: normal;
   }
 
-
-
+.logo {
+    color: white;
+}
 
 .wrapper {
     background-color: rgb(93, 185, 232);

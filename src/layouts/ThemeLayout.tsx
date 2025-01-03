@@ -19,12 +19,11 @@ const ThemeProvider: React.FC<{children: ReactNode}> = ({ children }) => {
         const root = document.documentElement;
         if (newTheme === 'light') {
             root.style.setProperty('background-color', 'white');
-            root.style.setProperty('color', 'black');
+            root.style.setProperty('color', 'rgb(93, 185, 232)');
             root.style.setProperty('input-background-color', 'white');
             root.style.setProperty('--placeholder-color', 'gray');
         } else {
             root.style.setProperty('input-background-color', 'gray');
-            root.style.setProperty('--button-background-color', 'gray');
             root.style.setProperty('color', 'white');
             root.style.setProperty('--placeholder-color', 'white');
             root.style.setProperty('background-color', 'gray');
@@ -36,7 +35,6 @@ const ThemeProvider: React.FC<{children: ReactNode}> = ({ children }) => {
 
         document.querySelectorAll('button').forEach((button) => {
             button.style.backgroundColor = getComputedStyle(root).getPropertyValue('--button-background-color');
-            button.style.color = getComputedStyle(root).getPropertyValue('--button-text-color');
         });
     };
 

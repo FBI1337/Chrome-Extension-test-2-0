@@ -22,6 +22,12 @@ input {
   background-color: var(--input-background-color);
 }
 
+
+button {
+  background-color: var(--button-background-color);
+}
+
+
 input::placeholder {
   color: var(--placeholder-color);
 }
